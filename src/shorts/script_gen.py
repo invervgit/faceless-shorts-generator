@@ -222,9 +222,9 @@ async def generate_script(topic: str, tone: str = "documentary", duration_second
                     script_dict = json.loads(clean_json)
                     script = GeneratedScript.model_validate(script_dict)
                 except Exception as e:
-                    logger.warning(f"Retry failed for {provider.name}: {e}")
-                    # If retry fails parsing, we continue to next provider
-                    continue
+                    logger.warning(f"Retry failed for {provider.name}: {e}. Falling back to first attempt.")
+                    # If retry fails (e.g. rate limit), fallback to the original script which is already in `script`.
+                    pass
                 
                 # We do not strictly fail on the second attempt's word count, we accept it as best effort.
             
