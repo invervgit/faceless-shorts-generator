@@ -27,8 +27,8 @@ def get_logo_filter(vid_in: str, logo_in: str, pad_out: str, position: str = "to
     return logo_prep + overlay
 
 def get_progress_bar_filter(vid_in: str, pad_out: str, duration: float) -> str:
-    """Draws a thin animated progress bar at the bottom."""
-    return f"[{vid_in}]drawbox=x=0:y=H-10:w='W*(t/{duration})':h=10:color=red@0.8:t=fill[{pad_out}]"
+    """Progress bar disabled due to FFmpeg drawbox limitations."""
+    return f"[{vid_in}]null[{pad_out}]"
 
 def generate_attribution_frame(manifest_path: str, output_path: str, width: int = 1080, height: int = 1920) -> str:
     """Auto-generates a credits card from manifest.json using Pillow."""
