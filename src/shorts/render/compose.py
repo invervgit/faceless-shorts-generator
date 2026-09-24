@@ -99,7 +99,7 @@ def compose_video(
     ass_escaped = subtitles_path.replace("\\", "/").replace(":", "\\:")
     out_pad = "with_subs"
     # Note: Fontsdir ensures Github Actions renders the exact same fonts as locally
-    filter_complex.append(f"[{current_pad}]subtitles='{ass_escaped}':fontsdir=assets/fonts[{out_pad}]")
+    filter_complex.append(f"[{current_pad}]subtitles={ass_escaped}:fontsdir=assets/fonts[{out_pad}]")
     current_pad = out_pad
     
     # 4. Logo Overlay
