@@ -22,8 +22,22 @@ class Settings(BaseSettings):
     openverse_client_id: Optional[str] = None
     openverse_client_secret: Optional[str] = None
 
+    cache_dir: Path = Path(".cache/shorts")
+    full_user_agent: str = "ShortsGen/1.0 (+contact-email)"
+    templates_dir: str = "./config/prompts"
+    providers: list = []
+
+    def load_yaml(self, path: str = "config/settings.yaml"):
+        import yaml
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                data = yaml.safe_load(f)
+                if data:
+                    self.templates_dir = data.get("templates_dir", self.templates_dir)
+                    self.providers = data.get("providers", self.providers)
 
 settings = Settings()
+settings.load_yaml()
 
 def configure_logging():
     import logging
