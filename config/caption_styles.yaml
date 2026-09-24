@@ -1,0 +1,39 @@
+karaoke:
+  font_family: "Montserrat ExtraBold"
+  font_size: 24
+  primary_color: "&H00FFFFFF"    # White text base
+  highlight_color: "&H0000FFFF"  # Yellow highlight
+  outline_color: "&H00000000"    # Black outline
+  vertical_position: 80          # 80% down
+  uppercase: true
+  max_words_per_chunk: 4
+
+word:
+  font_family: "Montserrat ExtraBold"
+  font_size: 32
+  primary_color: "&H00FFFFFF"
+  highlight_color: "&H0000FFFF"
+  outline_color: "&H00000000"
+  vertical_position: 50
+  uppercase: true
+  max_words_per_chunk: 1
+
+phrase:
+  font_family: "Montserrat ExtraBold"
+  font_size: 20
+  primary_color: "&H00FFFFFF"
+  highlight_color: "&H00FFFFFF"
+  outline_color: "&H00000000"
+  vertical_position: 75
+  uppercase: false
+  max_words_per_chunk: 8
+
+typewriter:
+  font_family: "Montserrat ExtraBold"
+  font_size: 22
+  primary_color: "&H00FFFFFF"
+  highlight_color: "&H00FFFFFF"
+  outline_color: "&H00000000"
+  vertical_position: 75
+  uppercase: false
+  max_words_per_chunk: 6

@@ -1,0 +1,74 @@
+name: Generate Video
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Topic for the video'
+        required: true
+        default: 'The history of Rome'
+      tone:
+        description: 'Script Tone'
+        required: false
+        default: 'documentary'
+      duration:
+        description: 'Duration (seconds)'
+        required: false
+        default: '30'
+      voice:
+        description: 'Voice ID'
+        required: false
+        default: 'en-US-ChristopherNeural'
+  repository_dispatch:
+    types: [generate-video]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: pip install .
+        
+      - name: Cache Assets
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/shorts
+          key: shorts-assets-${{ hashFiles('pyproject.toml') }}
+          restore-keys: |
+            shorts-assets-
+            
+      - name: Generate Video
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          shorts generate "${{ github.event.inputs.topic || 'The lost city of Atlantis' }}" --tone "${{ github.event.inputs.tone || 'documentary' }}" --duration ${{ github.event.inputs.duration || 30 }} --voice "${{ github.event.inputs.voice || 'en-US-ChristopherNeural' }}"
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-videos
+          path: output/*.mp4
+          
+      - name: Create Release
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="render-$(date +%s)"
+          gh release create "$TAG" output/*.mp4 --title "Render: ${{ github.event.inputs.topic }}" --notes "Auto-generated short."
+          
+      - name: Write Job Summary
+        run: |
+          echo "## Render Complete! 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "**Topic:** ${{ github.event.inputs.topic }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Duration:** ${{ github.event.inputs.duration }}s" >> $GITHUB_STEP_SUMMARY

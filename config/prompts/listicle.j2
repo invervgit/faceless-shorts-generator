@@ -1,0 +1,9 @@
+Create a fast-paced listicle short-form script (e.g., "Top 3...", "5 Secrets of...") about: "{{ topic }}".
+
+RULES:
+1. Total narration word count must be exactly ~{{ target_words }} words (to fit {{ duration }} seconds at 150 wpm).
+2. The `image_query` must be literally searchable (e.g., "Eiffel tower wide shot", NOT "a majestic view of a landmark"). This is critical for finding actual images.
+3. The `subject_name` must be the canonical full name if `subject_type` is "person".
+4. Do not include any stage directions, "[pause]", or emojis in the narration.
+5. The hook (first 3 seconds) must immediately stop the scroll by stating exactly what the viewer will learn.
+6. Return ONLY valid JSON, according to the provided schema. No markdown formatting blocks or extraneous text.

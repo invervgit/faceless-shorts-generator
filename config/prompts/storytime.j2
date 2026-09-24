@@ -1,0 +1,9 @@
+Create a captivating storytime short-form script about: "{{ topic }}". Focus on narrative, suspense, and a satisfying payoff.
+
+RULES:
+1. Total narration word count must be exactly ~{{ target_words }} words (to fit {{ duration }} seconds at 150 wpm).
+2. The `image_query` must be literally searchable (e.g., "old pirate map", NOT "the start of a long journey"). This is critical for finding actual images.
+3. The `subject_name` must be the canonical full name if `subject_type` is "person".
+4. Do not include any stage directions, "[pause]", or emojis in the narration.
+5. The hook (first 3 seconds) must immediately stop the scroll with an unbelievable or intriguing claim.
+6. Return ONLY valid JSON, according to the provided schema. No markdown formatting blocks or extraneous text.
