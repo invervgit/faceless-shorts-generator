@@ -143,10 +143,10 @@ def compose_video(
             filter_complex.append(f"[{audio_idx}:a]adelay=delays={delay_ms}|{delay_ms}:all=1[final_a]")
             audio_pad = "[final_a]"
         else:
-            audio_pad = f"[{audio_idx}:a]"
+            audio_pad = f"{audio_idx}:a"
     else:
         out_pad = current_pad
-        audio_pad = f"[{audio_idx}:a]"
+        audio_pad = f"{audio_idx}:a"
 
     filter_script = ";\n".join(filter_complex)
     
