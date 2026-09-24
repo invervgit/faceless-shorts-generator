@@ -145,9 +145,7 @@ def compose_video(
         else:
             audio_pad = f"[{audio_idx}:a]"
     else:
-        out_pad = "final_v"
-        # Just copy if nothing to concat
-        filter_complex.append(f"[{current_pad}]copy[{out_pad}]")
+        out_pad = current_pad
         audio_pad = f"[{audio_idx}:a]"
 
     filter_script = ";\n".join(filter_complex)
@@ -179,16 +177,23 @@ def compose_video(
 
     logger.info(f"Running FFmpeg graph for job {job_id}...")
     
-    # Stream stderr to parse progress
+    # Stream stderr to parse progress and collect errors
     process = subprocess.Popen(cmd, stderr=subprocess.PIPE, universal_newlines=True)
     
+    stderr_lines = []
     for line in process.stderr:
+        stderr_lines.append(line)
         # Progress parsing happens here in a live environment
         pass
         
     process.wait()
+    
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write("\n\nSTDERR:\n" + "".join(stderr_lines))
+        
     if process.returncode != 0:
-        raise RuntimeError(f"FFmpeg failed with code {process.returncode}. See {log_path} for details.")
+        error_tail = "".join(stderr_lines[-20:])
+        raise RuntimeError(f"FFmpeg failed with code {process.returncode}. Last error lines:\n{error_tail}\nSee {log_path} for details.")
         
     # 7. Validate output
     out_dur = _get_duration(output_path)
