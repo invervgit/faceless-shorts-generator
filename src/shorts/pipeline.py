@@ -121,12 +121,15 @@ async def generate(job: JobSpec) -> AsyncGenerator[ProgressEvent, None]:
     try:
         # 1. Script
         yield ProgressEvent(stage="script", pct=5, message="Generating script...")
-        if job.topic.strip().startswith("{") and "scenes" in job.topic:
+        from shorts.script_gen import _extract_json
+        extracted = _extract_json(job.topic)
+        if extracted.startswith("{") and "scenes" in extracted:
             try:
-                script = GeneratedScript.model_validate_json(job.topic)
+                script = GeneratedScript.model_validate_json(extracted)
                 logger.info("Using user-provided JSON script override.")
             except Exception as e:
-                raise ValueError(f"Failed to parse custom JSON script: {e}")
+                logger.warning(f"Failed to parse custom JSON script: {e}. Falling back to AI generation.")
+                script = await generate_script(topic=job.topic, tone=job.tone, duration_seconds=job.duration, target_scenes=job.target_scenes)
         else:
             script = await generate_script(topic=job.topic, tone=job.tone, duration_seconds=job.duration, target_scenes=job.target_scenes)
         yield ProgressEvent(stage="script", pct=20, message=f"Script generated with {len(script.scenes)} scenes.")

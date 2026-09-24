@@ -56,15 +56,15 @@ async def call_openai_compatible(
     schema: dict[str, Any],
 ) -> str:
     """Calls an OpenAI-compatible Chat Completions endpoint."""
-    api_key = os.getenv(provider.api_key_env)
-    if not api_key:
-        raise ValueError(f"Missing API key: {provider.api_key_env}")
-
-    api_key = api_key.strip()
     headers = {
-        "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
     }
+    
+    api_key = os.getenv(provider.api_key_env) if provider.api_key_env else None
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key.strip()}"
+    elif provider.api_key_env and provider.api_key_env != "NONE":
+        raise ValueError(f"Missing API key: {provider.api_key_env}")
     
     payload = {
         "model": provider.model,

@@ -24,3 +24,9 @@ providers:
     model: "gemini-2.0-flash"
     is_openai_compatible: false
     supports_json_mode: true
+  - name: "pollinations"
+    base_url: "https://text.pollinations.ai/openai/chat/completions"
+    api_key_env: "NONE"
+    model: "openai"
+    is_openai_compatible: true
+    supports_json_mode: true
