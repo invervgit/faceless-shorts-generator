@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Optional
 
 import structlog
+from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -34,7 +35,17 @@ class Settings(BaseSettings):
                 data = yaml.safe_load(f)
                 if data:
                     self.templates_dir = data.get("templates_dir", self.templates_dir)
-                    self.providers = data.get("providers", self.providers)
+                    # We need to parse into ProviderConfig
+                    provs = data.get("providers", [])
+                    self.providers = [ProviderConfig(**p) for p in provs]
+
+class ProviderConfig(BaseModel):
+    name: str
+    base_url: str
+    api_key_env: str
+    model: str
+    is_openai_compatible: bool = True
+    supports_json_mode: bool = True
 
 settings = Settings()
 settings.load_yaml()
