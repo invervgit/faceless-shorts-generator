@@ -84,13 +84,23 @@ class JobResult(BaseModel):
 
 async def download_asset(url: str, dest_path: Path):
     from shorts.http import fetch
-    resp = await fetch("GET", url, use_cache=True)
-    if resp.status_code == 200:
-        with open(dest_path, "wb") as f:
-            f.write(resp.content)
-    else:
-        raise ValueError(f"Failed to download image {url}")
-    return dest_path
+    import logging
+    logger = logging.getLogger(__name__)
+    
+    try:
+        resp = await fetch("GET", url, use_cache=True)
+        if resp.status_code == 200:
+            with open(dest_path, "wb") as f:
+                f.write(resp.content)
+            return dest_path
+        else:
+            raise ValueError(f"Status code {resp.status_code}")
+    except Exception as e:
+        logger.error(f"Failed to download image {url}: {e}. Creating fallback blank image.")
+        from PIL import Image
+        img = Image.new('RGB', (1080, 1920), color = 'black')
+        img.save(dest_path)
+        return dest_path
 
 async def generate(job: JobSpec) -> AsyncGenerator[ProgressEvent, None]:
     job_id = uuid.uuid4().hex[:8]
@@ -149,7 +159,13 @@ async def generate(job: JobSpec) -> AsyncGenerator[ProgressEvent, None]:
         
         for idx, img_res in sorted(image_results, key=lambda x: x[0]):
             if not img_res:
-                raise ValueError(f"Failed to find any valid image for scene {idx+1}")
+                logger.warning(f"Failed to find any valid image for scene {idx+1}. Using fallback black image.")
+                dest = run_dir / f"scene_{idx}.jpg"
+                from PIL import Image
+                img = Image.new('RGB', (1080, 1920), color = 'black')
+                img.save(dest)
+                local_scene_images.append(str(dest))
+                continue
                 
             manifest_images.append(img_res)
             # Try to grab extension from URL, fallback to jpg

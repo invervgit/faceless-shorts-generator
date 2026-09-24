@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     openverse_client_secret: Optional[str] = None
 
     cache_dir: Path = Path(".cache/shorts")
-    full_user_agent: str = "ShortsGen/1.0 (+contact-email)"
+    full_user_agent: str = "ShortsGen/1.0 (https://github.com/invervgit/faceless-shorts-generator; bot)"
     templates_dir: str = "./config/prompts"
     providers: list = []
 
