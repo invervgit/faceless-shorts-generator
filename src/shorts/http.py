@@ -80,6 +80,10 @@ async def fetch(
                     if "Retry-After" in response.headers:
                         try:
                             retry_after = int(response.headers["Retry-After"])
+                            if retry_after > 10:
+                                logger.warning(f"Rate limited by {url} with extreme Retry-After: {retry_after}s. Failing fast to trigger fallback.")
+                                response.raise_for_status() # This will raise HTTPStatusError and break out of Tenacity
+                            
                             logger.warning(f"Rate limited by {url}. Honor Retry-After: {retry_after}s.")
                             await asyncio.sleep(retry_after)
                         except ValueError:
