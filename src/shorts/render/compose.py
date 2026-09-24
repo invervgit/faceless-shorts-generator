@@ -47,7 +47,7 @@ def compose_video(
     
     # Inputs 0 to N-1: Scene Images
     for img in scene_images:
-        inputs.extend(["-loop", "1", "-framerate", "30", "-t", "60", "-i", img])
+        inputs.extend(["-i", img])
         
     # Input N: Main Audio
     audio_idx = len(scene_images)
