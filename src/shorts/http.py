@@ -17,9 +17,9 @@ from shorts.config import settings
 
 logger = logging.getLogger(__name__)
 
-# Shared httpx.AsyncClient with HTTP/2 enabled
+# Shared httpx.AsyncClient
 _client = httpx.AsyncClient(
-    http2=True,
+    http2=False,
     timeout=30.0,
     headers={"User-Agent": settings.full_user_agent},
 )
