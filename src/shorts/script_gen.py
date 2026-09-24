@@ -142,7 +142,7 @@ async def call_gemini(
         raise ValueError(f"Invalid Gemini response format: {e}")
 
 
-async def generate_script(topic: str, tone: str = "documentary", duration_seconds: int = 30) -> GeneratedScript:
+async def generate_script(topic: str, tone: str = "documentary", duration_seconds: int = 30, target_scenes: int = 5) -> GeneratedScript:
     """
     Generates a script using a cascade of AI providers.
     Enforces word count and pydantic schema.
@@ -162,7 +162,7 @@ async def generate_script(topic: str, tone: str = "documentary", duration_second
         f"Schema: {json.dumps(schema_json)}"
     )
     
-    user_prompt = template.render(topic=topic, target_words=target_words, duration=duration_seconds)
+    user_prompt = template.render(topic=topic, target_words=target_words, duration=duration_seconds, target_scenes=target_scenes)
     
     # Setup cache key
     cache_key_data = f"{topic}_{tone}_{duration_seconds}"

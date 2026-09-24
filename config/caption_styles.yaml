@@ -4,7 +4,7 @@ karaoke:
   primary_color: "&H00FFFFFF"    # White text base
   highlight_color: "&H0000FFFF"  # Yellow highlight
   outline_color: "&H00000000"    # Black outline
-  vertical_position: 80          # 80% down
+  vertical_position: 78          # 78% down
   uppercase: true
   max_words_per_chunk: 4
 

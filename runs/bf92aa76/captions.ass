@@ -1,0 +1,36 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 1
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: BaseStyle,Montserrat ExtraBold,24,&H0000FFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,4,2,8,20,20,1478,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.69,BaseStyle,,0,0,0,,{\k42}EVER {\k42}WONDER {\k42}WHY {\k42}INDIAN
+Dialogue: 0,0:00:01.69,0:00:03.38,BaseStyle,,0,0,0,,{\k42}POLITICIANS {\k42}BETRAY {\k42}THEIR {\k42}PARTIES,
+Dialogue: 0,0:00:03.38,0:00:05.08,BaseStyle,,0,0,0,,{\k42}YET {\k42}ANTI {\k42}DEFECTION {\k42}LAWS
+Dialogue: 0,0:00:05.08,0:00:06.77,BaseStyle,,0,0,0,,{\k42}STILL {\k42}TRY {\k42}TO {\k42}STOP
+Dialogue: 0,0:00:06.77,0:00:07.61,BaseStyle,,0,0,0,,{\k42}THEM {\k42}TODAY?
+Dialogue: 0,0:00:07.61,0:00:08.88,BaseStyle,,0,0,0,,{\k42}INDIA'S {\k42}TENTH {\k42}AMENDMENT,
+Dialogue: 0,0:00:08.88,0:00:10.15,BaseStyle,,0,0,0,,{\k42}PASSED {\k42}IN {\k42}1985,
+Dialogue: 0,0:00:10.15,0:00:11.85,BaseStyle,,0,0,0,,{\k42}LEGALLY {\k42}BARS {\k42}ELECTED {\k42}MEMBERS
+Dialogue: 0,0:00:11.85,0:00:13.54,BaseStyle,,0,0,0,,{\k42}FROM {\k42}SWITCHING {\k42}PARTIES {\k42}IN
+Dialogue: 0,0:00:13.54,0:00:13.96,BaseStyle,,0,0,0,,{\k42}PARLIAMENT.
+Dialogue: 0,0:00:13.96,0:00:15.65,BaseStyle,,0,0,0,,{\k42}THE {\k42}SPEAKER {\k42}DECIDES {\k42}WHO
+Dialogue: 0,0:00:15.65,0:00:16.50,BaseStyle,,0,0,0,,{\k42}IS {\k42}GUILTY,
+Dialogue: 0,0:00:16.50,0:00:17.77,BaseStyle,,0,0,0,,{\k42}BUT {\k42}POLITICAL {\k42}PRESSURE,
+Dialogue: 0,0:00:17.77,0:00:18.61,BaseStyle,,0,0,0,,{\k42}PARTY {\k42}STRATEGY,
+Dialogue: 0,0:00:18.61,0:00:20.31,BaseStyle,,0,0,0,,{\k42}AND {\k42}COURT {\k42}RULINGS {\k42}OFTEN
+Dialogue: 0,0:00:20.31,0:00:21.99,BaseStyle,,0,0,0,,{\k42}SHAPE {\k42}THAT {\k42}JUDGMENT {\k42}STILL
+Dialogue: 0,0:00:21.99,0:00:22.42,BaseStyle,,0,0,0,,{\k42}TODAY.
+Dialogue: 0,0:00:22.42,0:00:24.11,BaseStyle,,0,0,0,,{\k42}CRITICS {\k42}SAY {\k42}IT {\k42}CHILLS
+Dialogue: 0,0:00:24.11,0:00:24.96,BaseStyle,,0,0,0,,{\k42}DEMOCRATIC {\k42}CHOICE,
+Dialogue: 0,0:00:24.96,0:00:26.65,BaseStyle,,0,0,0,,{\k42}SUPPORTERS {\k42}SAY {\k42}IT {\k42}STOPS
+Dialogue: 0,0:00:26.65,0:00:27.50,BaseStyle,,0,0,0,,{\k42}HORSE {\k42}TRADING,
+Dialogue: 0,0:00:27.50,0:00:29.19,BaseStyle,,0,0,0,,{\k42}LEAVING {\k42}A {\k42}FRAGILE {\k42}LINE
+Dialogue: 0,0:00:29.19,0:00:30.88,BaseStyle,,0,0,0,,{\k42}OF {\k42}LOYALTY {\k42}AND {\k42}ACCOUNTABILITY
+Dialogue: 0,0:00:30.88,0:00:31.73,BaseStyle,,0,0,0,,{\k42}IN {\k42}INDIA.

@@ -19,6 +19,9 @@ from shorts.sources.pixabay import source as pixabay_source
 from shorts.sources.pollinations import source as pollinations_source
 from shorts.sources.unsplash import source as unsplash_source
 from shorts.sources.wikimedia import source as wikimedia_source
+from shorts.sources.duckduckgo import DuckDuckGoSource
+
+duckduckgo_source = DuckDuckGoSource()
 
 logger = logging.getLogger(__name__)
 
@@ -89,12 +92,14 @@ class SourceRegistry:
         self.breaker = CircuitBreaker(db_path)
         
         self.person_cascade = [
+            duckduckgo_source,
             wikimedia_source,
             openverse_source,
             # broadened wikimedia logic can be handled at the source level or injected as a lambda
         ]
         
         self.generic_cascade = [
+            duckduckgo_source,
             pexels_source,
             pixabay_source,
             unsplash_source,

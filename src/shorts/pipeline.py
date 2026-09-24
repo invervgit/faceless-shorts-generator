@@ -38,8 +38,10 @@ class JobSpec(BaseModel):
     motion_style: str = "auto"
     transition: str = "fade"
     allow_fallback: bool = True
+    target_scenes: int = 5
     
     # Captions
+    disable_captions: bool = False
     style: str = "karaoke"
     font_family: str = "Montserrat ExtraBold"
     font_size: int = 24
@@ -119,7 +121,14 @@ async def generate(job: JobSpec) -> AsyncGenerator[ProgressEvent, None]:
     try:
         # 1. Script
         yield ProgressEvent(stage="script", pct=5, message="Generating script...")
-        script = await generate_script(topic=job.topic, tone=job.tone, duration_seconds=job.duration)
+        if job.topic.strip().startswith("{") and "scenes" in job.topic:
+            try:
+                script = GeneratedScript.model_validate_json(job.topic)
+                logger.info("Using user-provided JSON script override.")
+            except Exception as e:
+                raise ValueError(f"Failed to parse custom JSON script: {e}")
+        else:
+            script = await generate_script(topic=job.topic, tone=job.tone, duration_seconds=job.duration, target_scenes=job.target_scenes)
         yield ProgressEvent(stage="script", pct=20, message=f"Script generated with {len(script.scenes)} scenes.")
         
         # 2. Concurrently fetch TTS and Images
@@ -252,7 +261,8 @@ async def generate(job: JobSpec) -> AsyncGenerator[ProgressEvent, None]:
             logo_path=job.logo_path,
             preset=job.render_preset,
             crf=job.render_crf,
-            transition=job.transition
+            transition=job.transition,
+            disable_captions=job.disable_captions
         )
         
         # 6. Verify (implicitly done in compose_video with ffprobe checks)

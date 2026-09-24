@@ -41,6 +41,7 @@ def compose_video(
     crf: int = 23,
     transition: str = "fade",
     transition_duration: float = 0.3,
+    disable_captions: bool = False,
 ) -> str:
     """Builds and executes ONE ffmpeg command with a single complex filter graph."""
     inputs = []
@@ -96,11 +97,12 @@ def compose_video(
                 total_offset += scene_durations[i]
 
     # 3. ASS Subtitles (with escaped path)
-    ass_escaped = subtitles_path.replace("\\", "/").replace(":", "\\:")
-    out_pad = "with_subs"
-    # Note: Fontsdir ensures Github Actions renders the exact same fonts as locally
-    filter_complex.append(f"[{current_pad}]subtitles={ass_escaped}:fontsdir=assets/fonts[{out_pad}]")
-    current_pad = out_pad
+    if not disable_captions:
+        ass_escaped = subtitles_path.replace("\\", "/").replace(":", "\\:")
+        out_pad = "with_subs"
+        # Note: Fontsdir ensures Github Actions renders the exact same fonts as locally
+        filter_complex.append(f"[{current_pad}]subtitles={ass_escaped}:fontsdir=assets/fonts[{out_pad}]")
+        current_pad = out_pad
     
     # 4. Logo Overlay
     if logo_idx != -1:

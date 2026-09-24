@@ -1,0 +1,463 @@
+{
+  "job_spec": {
+    "topic": "India's anti defection law in politics",
+    "tone": "documentary",
+    "duration": 30,
+    "voice_engine": "edge-tts",
+    "voice_lang": "en",
+    "voice_id": "en-GB-SoniaNeural",
+    "voice_rate": "+0%",
+    "voice_pitch": "+0Hz",
+    "image_sources": [
+      "pexels",
+      "unsplash"
+    ],
+    "subject_hint": "auto",
+    "motion_style": "auto",
+    "transition": "fade",
+    "allow_fallback": true,
+    "style": "karaoke",
+    "font_family": "Montserrat ExtraBold",
+    "font_size": 24,
+    "primary_color": "&H00FFFFFF",
+    "highlight_color": "&H0000FFFF",
+    "outline_color": "&H00000000",
+    "vertical_position": 77,
+    "uppercase": true,
+    "intro_path": null,
+    "outro_path": null,
+    "logo_path": null,
+    "logo_position": "top_right",
+    "logo_margin": 40,
+    "logo_scale": 0.15,
+    "logo_opacity": 1.0,
+    "music_path": null,
+    "music_gain_db": -18,
+    "render_preset": "ultrafast",
+    "render_crf": 23,
+    "render_fps": 30,
+    "render_resolution": "1080x1920",
+    "keep_temp": false
+  },
+  "manifest": [
+    {
+      "url": "https://images.pexels.com/photos/8847165/pexels-photo-8847165.jpeg",
+      "width": 3619,
+      "height": 5429,
+      "license": "Pexels License",
+      "attribution": "Mikhail Nilov",
+      "source_name": "pexels",
+      "thumb_url": "https://images.pexels.com/photos/8847165/pexels-photo-8847165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    },
+    {
+      "url": "https://images.pexels.com/photos/11653323/pexels-photo-11653323.jpeg",
+      "width": 3448,
+      "height": 4592,
+      "license": "Pexels License",
+      "attribution": "Iakub Arifulin",
+      "source_name": "pexels",
+      "thumb_url": "https://images.pexels.com/photos/11653323/pexels-photo-11653323.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    },
+    {
+      "url": "https://images.pexels.com/photos/17843099/pexels-photo-17843099.jpeg",
+      "width": 3024,
+      "height": 3439,
+      "license": "Pexels License",
+      "attribution": "Phung Touch",
+      "source_name": "pexels",
+      "thumb_url": "https://images.pexels.com/photos/17843099/pexels-photo-17843099.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    },
+    {
+      "url": "https://images.pexels.com/photos/8846071/pexels-photo-8846071.jpeg",
+      "width": 2468,
+      "height": 3703,
+      "license": "Pexels License",
+      "attribution": "Mikhail Nilov",
+      "source_name": "pexels",
+      "thumb_url": "https://images.pexels.com/photos/8846071/pexels-photo-8846071.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    }
+  ],
+  "scene_durations": [
+    7.61472,
+    6.345600000000001,
+    8.4608,
+    9.30688
+  ],
+  "timings": [
+    {
+      "word": "Ever",
+      "start_time": 0.0,
+      "end_time": 0.42304
+    },
+    {
+      "word": "wonder",
+      "start_time": 0.42304,
+      "end_time": 0.84608
+    },
+    {
+      "word": "why",
+      "start_time": 0.84608,
+      "end_time": 1.26912
+    },
+    {
+      "word": "Indian",
+      "start_time": 1.26912,
+      "end_time": 1.69216
+    },
+    {
+      "word": "politicians",
+      "start_time": 1.69216,
+      "end_time": 2.1152
+    },
+    {
+      "word": "betray",
+      "start_time": 2.1152,
+      "end_time": 2.53824
+    },
+    {
+      "word": "their",
+      "start_time": 2.53824,
+      "end_time": 2.96128
+    },
+    {
+      "word": "parties,",
+      "start_time": 2.9612800000000004,
+      "end_time": 3.38432
+    },
+    {
+      "word": "yet",
+      "start_time": 3.38432,
+      "end_time": 3.80736
+    },
+    {
+      "word": "anti",
+      "start_time": 3.80736,
+      "end_time": 4.2304
+    },
+    {
+      "word": "defection",
+      "start_time": 4.2304,
+      "end_time": 4.653440000000001
+    },
+    {
+      "word": "laws",
+      "start_time": 4.653440000000001,
+      "end_time": 5.076480000000001
+    },
+    {
+      "word": "still",
+      "start_time": 5.07648,
+      "end_time": 5.49952
+    },
+    {
+      "word": "try",
+      "start_time": 5.49952,
+      "end_time": 5.922560000000001
+    },
+    {
+      "word": "to",
+      "start_time": 5.922560000000001,
+      "end_time": 6.345600000000001
+    },
+    {
+      "word": "stop",
+      "start_time": 6.3456,
+      "end_time": 6.76864
+    },
+    {
+      "word": "them",
+      "start_time": 6.76864,
+      "end_time": 7.191680000000001
+    },
+    {
+      "word": "today?",
+      "start_time": 7.191680000000001,
+      "end_time": 7.614720000000001
+    },
+    {
+      "word": "India's",
+      "start_time": 7.61472,
+      "end_time": 8.03776
+    },
+    {
+      "word": "Tenth",
+      "start_time": 8.03776,
+      "end_time": 8.4608
+    },
+    {
+      "word": "Amendment,",
+      "start_time": 8.4608,
+      "end_time": 8.883840000000001
+    },
+    {
+      "word": "passed",
+      "start_time": 8.883840000000001,
+      "end_time": 9.306880000000001
+    },
+    {
+      "word": "in",
+      "start_time": 9.306880000000001,
+      "end_time": 9.729920000000002
+    },
+    {
+      "word": "1985,",
+      "start_time": 9.72992,
+      "end_time": 10.15296
+    },
+    {
+      "word": "legally",
+      "start_time": 10.15296,
+      "end_time": 10.576
+    },
+    {
+      "word": "bars",
+      "start_time": 10.576,
+      "end_time": 10.99904
+    },
+    {
+      "word": "elected",
+      "start_time": 10.99904,
+      "end_time": 11.422080000000001
+    },
+    {
+      "word": "members",
+      "start_time": 11.422080000000001,
+      "end_time": 11.845120000000001
+    },
+    {
+      "word": "from",
+      "start_time": 11.845120000000001,
+      "end_time": 12.268160000000002
+    },
+    {
+      "word": "switching",
+      "start_time": 12.26816,
+      "end_time": 12.6912
+    },
+    {
+      "word": "parties",
+      "start_time": 12.6912,
+      "end_time": 13.11424
+    },
+    {
+      "word": "in",
+      "start_time": 13.11424,
+      "end_time": 13.53728
+    },
+    {
+      "word": "Parliament.",
+      "start_time": 13.53728,
+      "end_time": 13.960320000000001
+    },
+    {
+      "word": "The",
+      "start_time": 13.960320000000001,
+      "end_time": 14.383360000000001
+    },
+    {
+      "word": "Speaker",
+      "start_time": 14.383360000000001,
+      "end_time": 14.806400000000002
+    },
+    {
+      "word": "decides",
+      "start_time": 14.806400000000002,
+      "end_time": 15.229440000000002
+    },
+    {
+      "word": "who",
+      "start_time": 15.22944,
+      "end_time": 15.65248
+    },
+    {
+      "word": "is",
+      "start_time": 15.65248,
+      "end_time": 16.07552
+    },
+    {
+      "word": "guilty,",
+      "start_time": 16.07552,
+      "end_time": 16.49856
+    },
+    {
+      "word": "but",
+      "start_time": 16.49856,
+      "end_time": 16.9216
+    },
+    {
+      "word": "political",
+      "start_time": 16.9216,
+      "end_time": 17.344640000000002
+    },
+    {
+      "word": "pressure,",
+      "start_time": 17.344640000000002,
+      "end_time": 17.767680000000002
+    },
+    {
+      "word": "party",
+      "start_time": 17.767680000000002,
+      "end_time": 18.190720000000002
+    },
+    {
+      "word": "strategy,",
+      "start_time": 18.190720000000002,
+      "end_time": 18.613760000000003
+    },
+    {
+      "word": "and",
+      "start_time": 18.613760000000003,
+      "end_time": 19.036800000000003
+    },
+    {
+      "word": "court",
+      "start_time": 19.0368,
+      "end_time": 19.45984
+    },
+    {
+      "word": "rulings",
+      "start_time": 19.45984,
+      "end_time": 19.88288
+    },
+    {
+      "word": "often",
+      "start_time": 19.88288,
+      "end_time": 20.30592
+    },
+    {
+      "word": "shape",
+      "start_time": 20.30592,
+      "end_time": 20.72896
+    },
+    {
+      "word": "that",
+      "start_time": 20.72896,
+      "end_time": 21.152
+    },
+    {
+      "word": "judgment",
+      "start_time": 21.152,
+      "end_time": 21.57504
+    },
+    {
+      "word": "still",
+      "start_time": 21.57504,
+      "end_time": 21.99808
+    },
+    {
+      "word": "today.",
+      "start_time": 21.99808,
+      "end_time": 22.421120000000002
+    },
+    {
+      "word": "Critics",
+      "start_time": 22.421120000000002,
+      "end_time": 22.844160000000002
+    },
+    {
+      "word": "say",
+      "start_time": 22.844160000000002,
+      "end_time": 23.267200000000003
+    },
+    {
+      "word": "it",
+      "start_time": 23.267200000000003,
+      "end_time": 23.690240000000003
+    },
+    {
+      "word": "chills",
+      "start_time": 23.690240000000003,
+      "end_time": 24.113280000000003
+    },
+    {
+      "word": "democratic",
+      "start_time": 24.113280000000003,
+      "end_time": 24.536320000000003
+    },
+    {
+      "word": "choice,",
+      "start_time": 24.53632,
+      "end_time": 24.95936
+    },
+    {
+      "word": "supporters",
+      "start_time": 24.95936,
+      "end_time": 25.3824
+    },
+    {
+      "word": "say",
+      "start_time": 25.3824,
+      "end_time": 25.80544
+    },
+    {
+      "word": "it",
+      "start_time": 25.80544,
+      "end_time": 26.22848
+    },
+    {
+      "word": "stops",
+      "start_time": 26.22848,
+      "end_time": 26.65152
+    },
+    {
+      "word": "horse",
+      "start_time": 26.65152,
+      "end_time": 27.07456
+    },
+    {
+      "word": "trading,",
+      "start_time": 27.07456,
+      "end_time": 27.497600000000002
+    },
+    {
+      "word": "leaving",
+      "start_time": 27.497600000000002,
+      "end_time": 27.920640000000002
+    },
+    {
+      "word": "a",
+      "start_time": 27.920640000000002,
+      "end_time": 28.343680000000003
+    },
+    {
+      "word": "fragile",
+      "start_time": 28.343680000000003,
+      "end_time": 28.766720000000003
+    },
+    {
+      "word": "line",
+      "start_time": 28.766720000000003,
+      "end_time": 29.189760000000003
+    },
+    {
+      "word": "of",
+      "start_time": 29.189760000000003,
+      "end_time": 29.612800000000004
+    },
+    {
+      "word": "loyalty",
+      "start_time": 29.612800000000004,
+      "end_time": 30.035840000000004
+    },
+    {
+      "word": "and",
+      "start_time": 30.03584,
+      "end_time": 30.45888
+    },
+    {
+      "word": "accountability",
+      "start_time": 30.45888,
+      "end_time": 30.88192
+    },
+    {
+      "word": "in",
+      "start_time": 30.88192,
+      "end_time": 31.30496
+    },
+    {
+      "word": "India.",
+      "start_time": 31.30496,
+      "end_time": 31.728
+    }
+  ]
+}

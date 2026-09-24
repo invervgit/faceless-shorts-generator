@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/shivanshusharma/Documents/AGY_Projects/shorts/src/shorts/pipeline.py", line 122, in generate
+    script = await generate_script(topic=job.topic, tone=job.tone, duration_seconds=job.duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shivanshusharma/Documents/AGY_Projects/shorts/src/shorts/script_gen.py", line 239, in generate_script
+    raise RuntimeError("All providers in the cascade failed to generate a script.")
+RuntimeError: All providers in the cascade failed to generate a script.

@@ -1,0 +1,459 @@
+ffmpeg -y -i runs/382261a0/scene_0.jpeg -i runs/382261a0/scene_1.jpeg -i runs/382261a0/scene_2.jpg -i runs/382261a0/scene_3.jpg -i .cache/shorts/90c8fc1017d840630b63fb16aa3b8ff27457e1c836276f3aa0b8ff3b3181a06b.mp3 -filter_complex [0:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v0];[base_v0]zoompan=z='if(lte(zoom,1.0),1.5,max(1.001,zoom-0.0015))':d=202:s=1080x1920:fps=30[v0];
+[1:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v1];[base_v1]zoompan=z='min(zoom+0.0015,1.5)':d=202:s=1080x1920:fps=30[v1];
+[2:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v2];[base_v2]zoompan=z='min(zoom+0.0015,1.5)':x='if(eq(in,1),iw*0.2,x-1)':y='(ih-ih/zoom)/2':d=175:s=1080x1920:fps=30[v2];
+[3:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v3];[base_v3]zoompan=z=1.2:x='(iw-iw/zoom)/2':y='if(eq(in,1),ih*0.2,y-2)':d=166:s=1080x1920:fps=30[v3];
+[v0][v1]xfade=transition=fade:duration=0.3:offset=6.442[xfade1];
+[xfade1][v2]xfade=transition=fade:duration=0.3:offset=12.884[xfade2];
+[xfade2][v3]xfade=transition=fade:duration=0.3:offset=18.406[xfade3];
+[xfade3]subtitles=runs/382261a0/captions.ass:fontsdir=assets/fonts[with_subs];
+[with_subs]null[with_progress] -map [with_progress] -map 4:a -c:v libx264 -preset fast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart -r 30 test_final.mp4
+
+FILTER COMPLEX:
+[0:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v0];[base_v0]zoompan=z='if(lte(zoom,1.0),1.5,max(1.001,zoom-0.0015))':d=202:s=1080x1920:fps=30[v0];
+[1:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v1];[base_v1]zoompan=z='min(zoom+0.0015,1.5)':d=202:s=1080x1920:fps=30[v1];
+[2:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v2];[base_v2]zoompan=z='min(zoom+0.0015,1.5)':x='if(eq(in,1),iw*0.2,x-1)':y='(ih-ih/zoom)/2':d=175:s=1080x1920:fps=30[v2];
+[3:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v3];[base_v3]zoompan=z=1.2:x='(iw-iw/zoom)/2':y='if(eq(in,1),ih*0.2,y-2)':d=166:s=1080x1920:fps=30[v3];
+[v0][v1]xfade=transition=fade:duration=0.3:offset=6.442[xfade1];
+[xfade1][v2]xfade=transition=fade:duration=0.3:offset=12.884[xfade2];
+[xfade2][v3]xfade=transition=fade:duration=0.3:offset=18.406[xfade3];
+[xfade3]subtitles=runs/382261a0/captions.ass:fontsdir=assets/fonts[with_subs];
+[with_subs]null[with_progress]
+
+STDERR:
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg-full/9.0.2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-libplacebo --enable-libqrencode --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --enable-whisper --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+[Parsed_subtitles_19 @ 0xb89060e40] libass API version: 0x1705000
+[Parsed_subtitles_19 @ 0xb89060e40] libass source: tarball: 0.17.5
+[Parsed_subtitles_19 @ 0xb89060e40] Shaper: FriBidi 1.0.16 (SIMPLE) HarfBuzz-ng 14.5.0 (COMPLEX)
+[Parsed_subtitles_19 @ 0xb89060e40] Loading font file 'assets/fonts/Montserrat-ExtraBold.ttf'
+[Parsed_subtitles_19 @ 0xb89060e40] Error opening memory font 'Montserrat-ExtraBold.ttf'
+[Parsed_subtitles_19 @ 0xb89060e40] Using font provider coretext
+Input #0, image2, from 'runs/382261a0/scene_0.jpeg':
+  Duration: 00:00:00.04, start: 0.000000, bitrate: 215510 kb/s
+  Stream #0:0: Video: mjpeg (Baseline), yuvj420p(pc, bt470bg/unknown/unknown), 2788x3485, 25 fps, 25 tbr, 25 tbn
+Input #1, image2, from 'runs/382261a0/scene_1.jpeg':
+  Duration: 00:00:00.04, start: 0.000000, bitrate: 354861 kb/s
+  Stream #1:0: Video: mjpeg (Baseline), yuvj420p(pc, bt470bg/unknown/unknown), 3024x4032, 25 fps, 25 tbr, 25 tbn
+Input #2, image2, from 'runs/382261a0/scene_2.jpg':
+  Duration: 00:00:00.04, start: 0.000000, bitrate: 6653 kb/s
+  Stream #2:0: Video: mjpeg (Baseline), yuvj420p(pc, bt470bg/unknown/unknown), 1080x1920 [SAR 1:1 DAR 9:16], 25 fps, 25 tbr, 25 tbn
+Input #3, image2, from 'runs/382261a0/scene_3.jpg':
+  Duration: 00:00:00.04, start: 0.000000, bitrate: 557034 kb/s
+  Stream #3:0: Video: mjpeg (Baseline), yuvj422p(pc, bt470bg/unknown/unknown), 3120x4160, 25 fps, 25 tbr, 25 tbn
+[in#4/mp3 @ 0xb88c58a00] Estimating duration from bitrate, this may be inaccurate
+Input #4, mp3, from '.cache/shorts/90c8fc1017d840630b63fb16aa3b8ff27457e1c836276f3aa0b8ff3b3181a06b.mp3':
+  Duration: 00:00:23.93, start: 0.000000, bitrate: 48 kb/s
+  Stream #4:0: Audio: mp3 (mp3float), 24000 Hz, mono, fltp, 48 kb/s
+Stream mapping:
+  Stream #0:0 (mjpeg) -> scale:default
+  Stream #1:0 (mjpeg) -> scale:default
+  Stream #2:0 (mjpeg) -> scale:default
+  Stream #3:0 (mjpeg) -> scale:default
+  null:default -> Stream #0:0 (libx264)
+  Stream #4:0 -> #0:1 (mp3 (mp3float) -> aac (native))
+Press [q] to stop, [?] for help
+[Parsed_subtitles_19 @ 0xb89062a00] libass API version: 0x1705000
+[Parsed_subtitles_19 @ 0xb89062a00] libass source: tarball: 0.17.5
+[Parsed_subtitles_19 @ 0xb89062a00] Shaper: FriBidi 1.0.16 (SIMPLE) HarfBuzz-ng 14.5.0 (COMPLEX)
+[Parsed_subtitles_19 @ 0xb89062a00] Loading font file 'assets/fonts/Montserrat-ExtraBold.ttf'
+[Parsed_subtitles_19 @ 0xb89062a00] Error opening memory font 'Montserrat-ExtraBold.ttf'
+[Parsed_subtitles_19 @ 0xb89062a00] Using font provider coretext
+[swscaler @ 0xb89bf0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb89ea8000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8ac2c000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb89600000] deprecated pixel format used, make sure you did set range correctly
+[Parsed_subtitles_19 @ 0xb89062a00] fontselect: (Montserrat ExtraBold, 700, 0) -> /System/Library/Fonts/Helvetica.ttc, -1, Helvetica-Bold
+[swscaler @ 0xb8aeec000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8af8c000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3a0000] deprecated pixel format used, make sure you did set range correctly
+[libx264 @ 0xb890ae680] using SAR=1/1
+[libx264 @ 0xb890ae680] using cpu capabilities: ARMv8 NEON DotProd I8MM
+[libx264 @ 0xb890ae680] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0xb890ae680] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=2 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=6 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=12 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=30 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'test_final.mp4':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(pc, bt470bg/unknown/unknown, progressive), 1080x1920 [SAR 1:1 DAR 9:16], q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc63.1.102 libx264
+    Side data:
+      EXIF metadata: (108 bytes)
+      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 24000 Hz, mono, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 aac
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 30 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=00:00:00.17 bitrate=   2.2kbits/s speed=0.338x elapsed=0:00:00.50    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 7 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8cbf0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+frame=   48 fps= 48 q=29.0 size=     256KiB time=00:00:01.83 bitrate=1143.3kbits/s speed=1.82x elapsed=0:00:01.01    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 6 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 5 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+frame=  111 fps= 73 q=29.0 size=     768KiB time=00:00:03.79 bitrate=1656.9kbits/s speed=2.51x elapsed=0:00:01.51    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 5 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 14 times
+frame=  154 fps= 76 q=29.0 size=    1280KiB time=00:00:05.37 bitrate=1950.5kbits/s speed=2.66x elapsed=0:00:02.01    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 6 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+frame=  200 fps= 79 q=29.0 size=    2048KiB time=00:00:06.86 bitrate=2442.4kbits/s speed=2.72x elapsed=0:00:02.52    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+frame=  249 fps= 82 q=29.0 size=    3072KiB time=00:00:08.36 bitrate=3009.4kbits/s speed=2.76x elapsed=0:00:03.02    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+frame=  301 fps= 85 q=29.0 size=    4096KiB time=00:00:10.15 bitrate=3304.4kbits/s speed=2.87x elapsed=0:00:03.53    
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 8 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+frame=  348 fps= 86 q=29.0 size=    4864KiB time=00:00:11.73 bitrate=3396.0kbits/s speed=2.91x elapsed=0:00:04.03    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 2 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 16 times
+frame=  406 fps= 89 q=29.0 size=    5376KiB time=00:00:13.78 bitrate=3195.7kbits/s speed=3.04x elapsed=0:00:04.53    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 73 times
+frame=  480 fps= 95 q=29.0 size=    5632KiB time=00:00:16.04 bitrate=2875.9kbits/s speed=3.18x elapsed=0:00:05.04    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 72 times
+frame=  544 fps= 98 q=29.0 size=    5632KiB time=00:00:18.34 bitrate=2514.8kbits/s speed=3.31x elapsed=0:00:05.54    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 3 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 1 times
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 4 times
+[swscaler @ 0xb8d400000] deprecated pixel format used, make sure you did set range correctly
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 35 times
+frame=  599 fps= 99 q=29.0 size=    5888KiB time=00:00:20.13 bitrate=2395.1kbits/s speed=3.33x elapsed=0:00:06.04    
+[swscaler @ 0xb8c3f0000] deprecated pixel format used, make sure you did set range correctly
+    Last message repeated 71 times
+frame=  678 fps=103 q=29.0 size=    6144KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:06.55    
+[mp4 @ 0xb88c58c80] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0xb89060900] video:5867KiB audio:321KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.324082%
+frame=  718 fps=108 q=-1.0 Lsize=    6209KiB time=00:00:23.92 bitrate=2125.5kbits/s speed=3.61x elapsed=0:00:06.62    
+[libx264 @ 0xb890ae680] frame I:4     Avg QP:15.83  size:155673
+[libx264 @ 0xb890ae680] frame P:183   Avg QP:18.41  size: 22333
+[libx264 @ 0xb890ae680] frame B:531   Avg QP:22.66  size:  2444
+[libx264 @ 0xb890ae680] consecutive B-frames:  1.0%  0.6%  2.1% 96.4%
+[libx264 @ 0xb890ae680] mb I  I16..4: 35.6% 45.8% 18.6%
+[libx264 @ 0xb890ae680] mb P  I16..4:  0.7%  1.6%  0.5%  P16..4: 19.8%  7.3%  6.1%  0.0%  0.0%    skip:64.0%
+[libx264 @ 0xb890ae680] mb B  I16..4:  0.6%  0.2%  0.0%  B16..8: 10.3%  1.3%  0.1%  direct: 2.0%  skip:85.6%  L0:46.4% L1:45.3% BI: 8.4%
+[libx264 @ 0xb890ae680] 8x8 transform intra:44.4% inter:68.0%
+[libx264 @ 0xb890ae680] coded y,uvDC,uvAC intra: 41.0% 14.0% 4.3% inter: 4.5% 1.6% 0.1%
+[libx264 @ 0xb890ae680] i16 v,h,dc,p: 53% 19% 19%  9%
+[libx264 @ 0xb890ae680] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 22% 37%  4%  4%  4%  4%  3%  5%
+[libx264 @ 0xb890ae680] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 34% 15%  6%  6%  5%  8%  4%  9%
+[libx264 @ 0xb890ae680] i8c dc,h,v,p: 85%  9%  6%  1%
+[libx264 @ 0xb890ae680] Weighted P-Frames: Y:6.0% UV:3.8%
+[libx264 @ 0xb890ae680] ref P L0: 83.6% 16.4%
+[libx264 @ 0xb890ae680] ref B L0: 79.1% 20.9%
+[libx264 @ 0xb890ae680] ref B L1: 86.8% 13.2%
+[libx264 @ 0xb890ae680] kb/s:2008.11
+[aac @ 0xb890aed80] Qavg: 64979.898

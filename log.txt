@@ -1,0 +1,660 @@
+render	Set up job	﻿2026-09-24T13:08:11.4086932Z Current runner version: '2.337.0'
+render	Set up job	2026-09-24T13:08:11.4112436Z ##[group]Runner Image Provisioner
+render	Set up job	2026-09-24T13:08:11.4113688Z Hosted Compute Agent
+render	Set up job	2026-09-24T13:08:11.4114329Z Version: 20260828.587
+render	Set up job	2026-09-24T13:08:11.4115122Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+render	Set up job	2026-09-24T13:08:11.4115879Z Build Date: 2026-08-28T16:44:25Z
+render	Set up job	2026-09-24T13:08:11.4116932Z Worker ID: {de800969-1a54-4d74-ae10-a3c36df987f9}
+render	Set up job	2026-09-24T13:08:11.4117940Z Azure Region: eastus
+render	Set up job	2026-09-24T13:08:11.4118520Z ##[endgroup]
+render	Set up job	2026-09-24T13:08:11.4120370Z ##[group]Operating System
+render	Set up job	2026-09-24T13:08:11.4121108Z Ubuntu
+render	Set up job	2026-09-24T13:08:11.4121777Z 24.04.5
+render	Set up job	2026-09-24T13:08:11.4122342Z LTS
+render	Set up job	2026-09-24T13:08:11.4122902Z ##[endgroup]
+render	Set up job	2026-09-24T13:08:11.4123532Z ##[group]Runner Image
+render	Set up job	2026-09-24T13:08:11.4124161Z Image: ubuntu-24.04
+render	Set up job	2026-09-24T13:08:11.4124831Z Version: 20260920.314.1
+render	Set up job	2026-09-24T13:08:11.4126311Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+render	Set up job	2026-09-24T13:08:11.4128653Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+render	Set up job	2026-09-24T13:08:11.4129762Z ##[endgroup]
+render	Set up job	2026-09-24T13:08:11.4130993Z ##[group]GITHUB_TOKEN Permissions
+render	Set up job	2026-09-24T13:08:11.4133312Z Contents: read
+render	Set up job	2026-09-24T13:08:11.4133961Z Metadata: read
+render	Set up job	2026-09-24T13:08:11.4134612Z Packages: read
+render	Set up job	2026-09-24T13:08:11.4135259Z ##[endgroup]
+render	Set up job	2026-09-24T13:08:11.4137858Z Secret source: Actions
+render	Set up job	2026-09-24T13:08:11.4139009Z Cache mode: write
+render	Set up job	2026-09-24T13:08:11.4139995Z Prepare workflow directory
+render	Set up job	2026-09-24T13:08:11.4484162Z Prepare all required actions
+render	Set up job	2026-09-24T13:08:11.4533123Z Getting action download info
+render	Set up job	2026-09-24T13:08:11.6944471Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+render	Set up job	2026-09-24T13:08:11.8115357Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+render	Set up job	2026-09-24T13:08:11.8897534Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+render	Set up job	2026-09-24T13:08:11.9857796Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+render	Set up job	2026-09-24T13:08:12.2194867Z Complete job name: render
+render	Run actions/checkout@v4	﻿2026-09-24T13:08:12.3040433Z ##[group]Run actions/checkout@v4
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3041427Z with:
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3042012Z   repository: invervgit/faceless-shorts-generator
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3046574Z   token: ***
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3047297Z   ssh-strict: true
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3047788Z   ssh-user: git
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3048296Z   persist-credentials: true
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3048842Z   clean: true
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3049337Z   sparse-checkout-cone-mode: true
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3049923Z   fetch-depth: 1
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3050400Z   fetch-tags: false
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3050918Z   show-progress: true
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3051425Z   lfs: false
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3051894Z   submodules: false
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3052419Z   set-safe-directory: true
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3052992Z   allow-unsafe-pr-checkout: false
+render	Run actions/checkout@v4	2026-09-24T13:08:12.3053903Z ##[endgroup]
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4176850Z Syncing repository: invervgit/faceless-shorts-generator
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4179481Z ##[group]Getting Git version info
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4180591Z Working directory is '/home/runner/work/faceless-shorts-generator/faceless-shorts-generator'
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4182499Z [command]/usr/bin/git version
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4214961Z git version 2.55.0
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4240107Z ##[endgroup]
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4259180Z Temporarily overriding HOME='/home/runner/work/_temp/8717e174-eb71-4b86-a5dc-38923e354a07' before making global git config changes
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4262130Z Adding repository directory to the temporary git global config as a safe directory
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4266088Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/faceless-shorts-generator/faceless-shorts-generator
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4325478Z Deleting the contents of '/home/runner/work/faceless-shorts-generator/faceless-shorts-generator'
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4333167Z ##[group]Initializing the repository
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4339427Z [command]/usr/bin/git init /home/runner/work/faceless-shorts-generator/faceless-shorts-generator
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4476089Z hint: Using 'master' as the name for the initial branch. This default branch name
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4478180Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4480172Z hint: to use in all of your new repositories, which will suppress this warning,
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4481660Z hint: call:
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4482940Z hint:
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4484412Z hint: 	git config --global init.defaultBranch <name>
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4486058Z hint:
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4487907Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4490114Z hint: 'development'. The just-created branch can be renamed via this command:
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4491866Z hint:
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4493136Z hint: 	git branch -m <name>
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4494607Z hint:
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4496264Z hint: Disable this message with "git config set advice.defaultBranchName false"
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4499870Z Initialized empty Git repository in /home/runner/work/faceless-shorts-generator/faceless-shorts-generator/.git/
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4504726Z [command]/usr/bin/git remote add origin https://github.com/invervgit/faceless-shorts-generator
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4580305Z ##[endgroup]
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4581496Z ##[group]Disabling automatic garbage collection
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4582677Z [command]/usr/bin/git config --local gc.auto 0
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4620640Z ##[endgroup]
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4622679Z ##[group]Setting up auth
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4630828Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+render	Run actions/checkout@v4	2026-09-24T13:08:12.4667167Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+render	Run actions/checkout@v4	2026-09-24T13:08:12.5096016Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+render	Run actions/checkout@v4	2026-09-24T13:08:12.5157862Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+render	Run actions/checkout@v4	2026-09-24T13:08:12.5430923Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+render	Run actions/checkout@v4	2026-09-24T13:08:12.5479552Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+render	Run actions/checkout@v4	2026-09-24T13:08:12.5716419Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+render	Run actions/checkout@v4	2026-09-24T13:08:12.5757552Z ##[endgroup]
+render	Run actions/checkout@v4	2026-09-24T13:08:12.5758719Z ##[group]Fetching the repository
+render	Run actions/checkout@v4	2026-09-24T13:08:12.5767799Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e324434a46e5a95443963c275c83c45e25fe136a:refs/remotes/origin/main
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8412576Z From https://github.com/invervgit/faceless-shorts-generator
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8414840Z  * [new ref]         e324434a46e5a95443963c275c83c45e25fe136a -> origin/main
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8419926Z ##[endgroup]
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8421827Z ##[group]Determining the checkout info
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8423962Z ##[endgroup]
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8430104Z [command]/usr/bin/git sparse-checkout disable
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8487046Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8525421Z ##[group]Checking out the ref
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8528169Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8633739Z Switched to a new branch 'main'
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8638756Z branch 'main' set up to track 'origin/main'.
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8650133Z ##[endgroup]
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8697137Z [command]/usr/bin/git log -1 --format=%H
+render	Run actions/checkout@v4	2026-09-24T13:08:12.8727161Z e324434a46e5a95443963c275c83c45e25fe136a
+render	Set up Python	﻿2026-09-24T13:08:12.9138259Z ##[group]Run actions/setup-python@v5
+render	Set up Python	2026-09-24T13:08:12.9139227Z with:
+render	Set up Python	2026-09-24T13:08:12.9139824Z   python-version: 3.11
+render	Set up Python	2026-09-24T13:08:12.9140517Z   cache: pip
+render	Set up Python	2026-09-24T13:08:12.9141130Z   check-latest: false
+render	Set up Python	2026-09-24T13:08:12.9151865Z   token: ***
+render	Set up Python	2026-09-24T13:08:12.9152500Z   update-environment: true
+render	Set up Python	2026-09-24T13:08:12.9153283Z   allow-prereleases: false
+render	Set up Python	2026-09-24T13:08:12.9154031Z   freethreaded: false
+render	Set up Python	2026-09-24T13:08:12.9154688Z ##[endgroup]
+render	Set up Python	2026-09-24T13:08:13.0513803Z ##[group]Installed versions
+render	Set up Python	2026-09-24T13:08:13.0641959Z (node:2173) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+render	Set up Python	2026-09-24T13:08:13.0645215Z (Use `node --trace-deprecation ...` to show where the warning was created)
+render	Set up Python	2026-09-24T13:08:13.0647025Z Successfully set up CPython (3.11.16)
+render	Set up Python	2026-09-24T13:08:13.0648498Z ##[endgroup]
+render	Set up Python	2026-09-24T13:08:13.1510548Z [command]/opt/hostedtoolcache/Python/3.11.16/x64/bin/pip cache dir
+render	Set up Python	2026-09-24T13:08:13.4798471Z /home/runner/.cache/pip
+render	Set up Python	2026-09-24T13:08:13.5565197Z pip cache is not found
+render	Install dependencies	﻿2026-09-24T13:08:13.5759913Z ##[group]Run pip install .
+render	Install dependencies	2026-09-24T13:08:13.5761321Z ^[[36;1mpip install .^[[0m
+render	Install dependencies	2026-09-24T13:08:13.6087273Z shell: /usr/bin/bash -e {0}
+render	Install dependencies	2026-09-24T13:08:13.6088539Z env:
+render	Install dependencies	2026-09-24T13:08:13.6089781Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Install dependencies	2026-09-24T13:08:13.6091792Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+render	Install dependencies	2026-09-24T13:08:13.6093842Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Install dependencies	2026-09-24T13:08:13.6095671Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Install dependencies	2026-09-24T13:08:13.6097641Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Install dependencies	2026-09-24T13:08:13.6099494Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+render	Install dependencies	2026-09-24T13:08:13.6101099Z ##[endgroup]
+render	Install dependencies	2026-09-24T13:08:14.2805340Z Processing ./.
+render	Install dependencies	2026-09-24T13:08:14.2821173Z   Installing build dependencies: started
+render	Install dependencies	2026-09-24T13:08:14.9788983Z   Installing build dependencies: finished with status 'done'
+render	Install dependencies	2026-09-24T13:08:14.9794966Z   Getting requirements to build wheel: started
+render	Install dependencies	2026-09-24T13:08:15.4740921Z   Getting requirements to build wheel: finished with status 'done'
+render	Install dependencies	2026-09-24T13:08:15.4749521Z   Preparing metadata (pyproject.toml): started
+render	Install dependencies	2026-09-24T13:08:15.6468536Z   Preparing metadata (pyproject.toml): finished with status 'done'
+render	Install dependencies	2026-09-24T13:08:15.8196375Z Collecting pydantic>=2.0.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:15.8670729Z   Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+render	Install dependencies	2026-09-24T13:08:15.9111041Z Collecting pydantic-settings>=2.0.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:15.9151738Z   Downloading pydantic_settings-2.15.0-py3-none-any.whl.metadata (3.9 kB)
+render	Install dependencies	2026-09-24T13:08:15.9454748Z Collecting httpx>=0.27.0 (from httpx[http2]>=0.27.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:15.9496875Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+render	Install dependencies	2026-09-24T13:08:15.9659365Z Collecting tenacity>=8.0.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:15.9708763Z   Downloading tenacity-9.1.4-py3-none-any.whl.metadata (1.2 kB)
+render	Install dependencies	2026-09-24T13:08:16.0393633Z Collecting gradio>=4.0.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.0434916Z   Downloading gradio-6.28.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:16.0791466Z Collecting pyyaml>=6.0.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.0847458Z   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+render	Install dependencies	2026-09-24T13:08:16.0952248Z Collecting aiolimiter>=1.1.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.0992454Z   Downloading aiolimiter-1.3.0-py3-none-any.whl.metadata (5.5 kB)
+render	Install dependencies	2026-09-24T13:08:16.1124656Z Collecting jinja2>=3.1.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.1168919Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+render	Install dependencies	2026-09-24T13:08:16.1320223Z Collecting edge-tts>=6.1.10 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.1360310Z   Downloading edge_tts-7.2.8-py3-none-any.whl.metadata (5.5 kB)
+render	Install dependencies	2026-09-24T13:08:16.1492711Z Collecting gtts>=2.5.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.1541703Z   Downloading gTTS-2.5.4-py3-none-any.whl.metadata (4.1 kB)
+render	Install dependencies	2026-09-24T13:08:16.1660395Z Collecting imagehash>=4.3.1 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.1706991Z   Downloading ImageHash-4.3.2-py2.py3-none-any.whl.metadata (8.4 kB)
+render	Install dependencies	2026-09-24T13:08:16.3197251Z Collecting pillow>=10.0.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.3248545Z   Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+render	Install dependencies	2026-09-24T13:08:16.3483785Z Collecting typer>=0.9.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.3524500Z   Downloading typer-0.27.2-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:16.3794527Z Collecting rich>=13.0.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.3836365Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+render	Install dependencies	2026-09-24T13:08:16.3980237Z Collecting structlog>=24.1.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.4020923Z   Downloading structlog-26.1.0-py3-none-any.whl.metadata (9.7 kB)
+render	Install dependencies	2026-09-24T13:08:16.8847836Z Collecting aiohttp<4.0.0,>=3.8.0 (from edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.8890371Z   Downloading aiohttp-3.14.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+render	Install dependencies	2026-09-24T13:08:16.9059446Z Collecting certifi>=2023.11.17 (from edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.9099312Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+render	Install dependencies	2026-09-24T13:08:16.9358202Z Collecting tabulate<1.0.0,>=0.4.4 (from edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.9400665Z   Downloading tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)
+render	Install dependencies	2026-09-24T13:08:16.9579455Z Collecting typing-extensions<5.0.0,>=4.1.0 (from edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.9617579Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+render	Install dependencies	2026-09-24T13:08:16.9756519Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp<4.0.0,>=3.8.0->edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.9794989Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+render	Install dependencies	2026-09-24T13:08:16.9902560Z Collecting aiosignal>=1.4.0 (from aiohttp<4.0.0,>=3.8.0->edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:16.9941327Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+render	Install dependencies	2026-09-24T13:08:17.0269514Z Collecting attrs>=17.3.0 (from aiohttp<4.0.0,>=3.8.0->edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.0308468Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+render	Install dependencies	2026-09-24T13:08:17.0893489Z Collecting frozenlist>=1.1.1 (from aiohttp<4.0.0,>=3.8.0->edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.0937871Z   Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+render	Install dependencies	2026-09-24T13:08:17.3125930Z Collecting multidict<7.0,>=4.5 (from aiohttp<4.0.0,>=3.8.0->edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.3170858Z   Downloading multidict-6.9.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+render	Install dependencies	2026-09-24T13:08:17.4021369Z Collecting propcache>=0.2.0 (from aiohttp<4.0.0,>=3.8.0->edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.4063945Z   Downloading propcache-0.5.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+render	Install dependencies	2026-09-24T13:08:17.6365942Z Collecting yarl<2.0,>=1.17.0 (from aiohttp<4.0.0,>=3.8.0->edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.6409064Z   Downloading yarl-1.25.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+render	Install dependencies	2026-09-24T13:08:17.6630807Z Collecting idna>=2.0 (from yarl<2.0,>=1.17.0->aiohttp<4.0.0,>=3.8.0->edge-tts>=6.1.10->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.6669209Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+render	Install dependencies	2026-09-24T13:08:17.6934053Z Collecting anyio<5.0,>=3.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.6970637Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+render	Install dependencies	2026-09-24T13:08:17.7271055Z Collecting brotli>=1.1.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.7312803Z   Downloading brotli-1.2.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.1 kB)
+render	Install dependencies	2026-09-24T13:08:17.7698141Z Collecting fastapi<1.0,>=0.115.2 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.7739191Z   Downloading fastapi-0.141.1-py3-none-any.whl.metadata (27 kB)
+render	Install dependencies	2026-09-24T13:08:17.7966868Z Collecting gradio-client==2.7.1 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.8006837Z   Downloading gradio_client-2.7.1-py3-none-any.whl.metadata (7.1 kB)
+render	Install dependencies	2026-09-24T13:08:17.8126690Z Collecting groovy~=0.1 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.8168307Z   Downloading groovy-0.1.2-py3-none-any.whl.metadata (6.1 kB)
+render	Install dependencies	2026-09-24T13:08:17.8283892Z Collecting hf-gradio<1.0,>=0.4.1 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.8326865Z   Downloading hf_gradio-0.4.1-py3-none-any.whl.metadata (428 bytes)
+render	Install dependencies	2026-09-24T13:08:17.8722250Z Collecting huggingface-hub<2.0,>=1.16.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.8762427Z   Downloading huggingface_hub-1.33.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:17.9573965Z Collecting markupsafe<4.0,>=2.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:17.9615971Z   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+render	Install dependencies	2026-09-24T13:08:18.1424157Z Collecting numpy<3.0,>=1.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.1466385Z   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+render	Install dependencies	2026-09-24T13:08:18.3997693Z Collecting orjson~=3.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.4041190Z   Downloading orjson-3.12.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (41 kB)
+render	Install dependencies	2026-09-24T13:08:18.4225344Z Collecting packaging (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.4264114Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+render	Install dependencies	2026-09-24T13:08:18.5293936Z Collecting pandas<4.0,>=1.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.5341392Z   Downloading pandas-3.0.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+render	Install dependencies	2026-09-24T13:08:18.5779942Z Collecting pydub<1.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.5822755Z   Downloading pydub-0.25.1-py2.py3-none-any.whl.metadata (1.4 kB)
+render	Install dependencies	2026-09-24T13:08:18.5948373Z Collecting python-multipart<1.0,>=0.0.18 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.5986256Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+render	Install dependencies	2026-09-24T13:08:18.6307525Z Collecting pytz>=2017.2 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.6356722Z   Downloading pytz-2026.4-py2.py3-none-any.whl.metadata (22 kB)
+render	Install dependencies	2026-09-24T13:08:18.6478932Z Collecting safehttpx<0.2.0,>=0.1.7 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.6519327Z   Downloading safehttpx-0.1.7-py3-none-any.whl.metadata (4.2 kB)
+render	Install dependencies	2026-09-24T13:08:18.6633293Z Collecting semantic-version~=2.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.6680675Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+render	Install dependencies	2026-09-24T13:08:18.6898815Z Collecting starlette<2.0,>=1.0.1 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.6936945Z   Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+render	Install dependencies	2026-09-24T13:08:18.7088129Z Collecting tomlkit<0.15.0,>=0.12.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.7127302Z   Downloading tomlkit-0.14.0-py3-none-any.whl.metadata (2.8 kB)
+render	Install dependencies	2026-09-24T13:08:18.7468825Z Collecting uvicorn>=0.14.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.7507471Z   Downloading uvicorn-0.53.0-py3-none-any.whl.metadata (6.6 kB)
+render	Install dependencies	2026-09-24T13:08:18.7717635Z Collecting fsspec (from gradio-client==2.7.1->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.7762562Z   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+render	Install dependencies	2026-09-24T13:08:18.8142546Z Collecting typing-inspection>=0.4.2 (from fastapi<1.0,>=0.115.2->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.8184022Z   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+render	Install dependencies	2026-09-24T13:08:18.8280306Z Collecting annotated-doc>=0.0.2 (from fastapi<1.0,>=0.115.2->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.8322577Z   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+render	Install dependencies	2026-09-24T13:08:18.8507409Z Collecting httpcore==1.* (from httpx>=0.27.0->httpx[http2]>=0.27.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.8548914Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+render	Install dependencies	2026-09-24T13:08:18.8680019Z Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27.0->httpx[http2]>=0.27.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.8717674Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+render	Install dependencies	2026-09-24T13:08:18.8871671Z Collecting click<9.0.0,>=8.4.2 (from huggingface-hub<2.0,>=1.16.0->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.8910538Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+render	Install dependencies	2026-09-24T13:08:18.9114555Z Collecting filelock>=3.10.0 (from huggingface-hub<2.0,>=1.16.0->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.9156332Z   Downloading filelock-4.0.3-py3-none-any.whl.metadata (2.0 kB)
+render	Install dependencies	2026-09-24T13:08:18.9600104Z Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub<2.0,>=1.16.0->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.9641780Z   Downloading hf_xet-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+render	Install dependencies	2026-09-24T13:08:18.9913747Z Collecting tqdm>=4.42.1 (from huggingface-hub<2.0,>=1.16.0->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:18.9964509Z   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+render	Install dependencies	2026-09-24T13:08:19.0188680Z Collecting python-dateutil>=2.8.2 (from pandas<4.0,>=1.0->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:19.0226139Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+render	Install dependencies	2026-09-24T13:08:19.0348995Z Collecting annotated-types>=0.6.0 (from pydantic>=2.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:19.0389976Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+render	Install dependencies	2026-09-24T13:08:19.7290471Z Collecting pydantic-core==2.46.5 (from pydantic>=2.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:19.7335187Z   Downloading pydantic_core-2.46.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+render	Install dependencies	2026-09-24T13:08:19.7554452Z Collecting shellingham>=1.3.0 (from typer>=0.9.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:19.7592903Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+render	Install dependencies	2026-09-24T13:08:19.7846271Z Collecting requests<3,>=2.27 (from gtts>=2.5.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:19.7885826Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+render	Install dependencies	2026-09-24T13:08:19.7929799Z INFO: pip is looking at multiple versions of gtts to determine which version is compatible with other requirements. This could take a while.
+render	Install dependencies	2026-09-24T13:08:19.7935113Z Collecting gtts>=2.5.0 (from shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:19.7998860Z   Downloading gTTS-2.5.3-py3-none-any.whl.metadata (4.1 kB)
+render	Install dependencies	2026-09-24T13:08:19.8082511Z   Downloading gTTS-2.5.2-py3-none-any.whl.metadata (4.1 kB)
+render	Install dependencies	2026-09-24T13:08:19.8169385Z   Downloading gTTS-2.5.1-py3-none-any.whl.metadata (4.1 kB)
+render	Install dependencies	2026-09-24T13:08:20.0242332Z   Downloading gTTS-2.5.0-py3-none-any.whl.metadata (4.1 kB)
+render	Install dependencies	2026-09-24T13:08:20.0321633Z Collecting huggingface-hub<2.0,>=1.16.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.0365788Z   Downloading huggingface_hub-1.32.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.0476626Z Collecting click<8.2,>=7.1 (from gtts>=2.5.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.0519252Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+render	Install dependencies	2026-09-24T13:08:20.0559511Z INFO: pip is looking at multiple versions of huggingface-hub to determine which version is compatible with other requirements. This could take a while.
+render	Install dependencies	2026-09-24T13:08:20.0565332Z Collecting huggingface-hub<2.0,>=1.16.0 (from gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.0609092Z   Downloading huggingface_hub-1.31.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.0740748Z   Downloading huggingface_hub-1.30.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.0877995Z   Downloading huggingface_hub-1.29.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.1032452Z   Downloading huggingface_hub-1.28.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.1166897Z   Downloading huggingface_hub-1.27.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.1324439Z   Downloading huggingface_hub-1.26.1-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.1452041Z   Downloading huggingface_hub-1.26.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.1535221Z INFO: pip is still looking at multiple versions of huggingface-hub to determine which version is compatible with other requirements. This could take a while.
+render	Install dependencies	2026-09-24T13:08:20.1605561Z   Downloading huggingface_hub-1.25.1-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.1752906Z   Downloading huggingface_hub-1.25.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.1885714Z   Downloading huggingface_hub-1.24.0-py3-none-any.whl.metadata (16 kB)
+render	Install dependencies	2026-09-24T13:08:20.2032650Z   Downloading huggingface_hub-1.23.0-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.2155841Z   Downloading huggingface_hub-1.22.0-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.2239851Z INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+render	Install dependencies	2026-09-24T13:08:20.2296182Z   Downloading huggingface_hub-1.21.0-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.2448677Z   Downloading huggingface_hub-1.20.1-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.2594066Z   Downloading huggingface_hub-1.20.0-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.2740470Z   Downloading huggingface_hub-1.19.0-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.2885814Z   Downloading huggingface_hub-1.18.0-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.3017786Z   Downloading huggingface_hub-1.17.0-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.3155517Z   Downloading huggingface_hub-1.16.4-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.3284343Z   Downloading huggingface_hub-1.16.1-py3-none-any.whl.metadata (14 kB)
+render	Install dependencies	2026-09-24T13:08:20.4494793Z Collecting charset_normalizer<4,>=2 (from requests<3,>=2.27->gtts>=2.5.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.4543189Z   Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+render	Install dependencies	2026-09-24T13:08:20.4775669Z Collecting urllib3<3,>=1.26 (from requests<3,>=2.27->gtts>=2.5.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.4848733Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+render	Install dependencies	2026-09-24T13:08:20.5103611Z Collecting h2<5,>=3 (from httpx[http2]>=0.27.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.5147093Z   Downloading h2-4.4.1-py3-none-any.whl.metadata (3.8 kB)
+render	Install dependencies	2026-09-24T13:08:20.5259880Z Collecting hyperframe<7,>=6.1 (from h2<5,>=3->httpx[http2]>=0.27.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.5297994Z   Downloading hyperframe-6.1.0-py3-none-any.whl.metadata (4.3 kB)
+render	Install dependencies	2026-09-24T13:08:20.5403922Z Collecting hpack<5,>=4.2 (from h2<5,>=3->httpx[http2]>=0.27.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.5445361Z   Downloading hpack-4.2.0-py3-none-any.whl.metadata (3.3 kB)
+render	Install dependencies	2026-09-24T13:08:20.5808483Z Collecting PyWavelets (from imagehash>=4.3.1->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.5849379Z   Downloading pywavelets-1.9.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (7.6 kB)
+render	Install dependencies	2026-09-24T13:08:20.6983805Z Collecting scipy (from imagehash>=4.3.1->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.7030136Z   Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+render	Install dependencies	2026-09-24T13:08:20.7324599Z Collecting python-dotenv>=0.21.0 (from pydantic-settings>=2.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.7372724Z   Downloading python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+render	Install dependencies	2026-09-24T13:08:20.7521093Z Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas<4.0,>=1.0->gradio>=4.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.7563884Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+render	Install dependencies	2026-09-24T13:08:20.8160939Z Collecting markdown-it-py>=2.2.0 (from rich>=13.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.8201401Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+render	Install dependencies	2026-09-24T13:08:20.8389232Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.8431917Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+render	Install dependencies	2026-09-24T13:08:20.8540222Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.0.0->shorts==0.1.0)
+render	Install dependencies	2026-09-24T13:08:20.8577409Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+render	Install dependencies	2026-09-24T13:08:20.8791972Z Downloading aiolimiter-1.3.0-py3-none-any.whl (7.0 kB)
+render	Install dependencies	2026-09-24T13:08:20.8847245Z Downloading edge_tts-7.2.8-py3-none-any.whl (31 kB)
+render	Install dependencies	2026-09-24T13:08:20.8908552Z Downloading aiohttp-3.14.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+render	Install dependencies	2026-09-24T13:08:20.9077361Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 129.1 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:20.9141531Z Downloading multidict-6.9.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (320 kB)
+render	Install dependencies	2026-09-24T13:08:20.9217718Z Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)
+render	Install dependencies	2026-09-24T13:08:20.9275355Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+render	Install dependencies	2026-09-24T13:08:20.9333796Z Downloading yarl-1.25.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+render	Install dependencies	2026-09-24T13:08:20.9392235Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+render	Install dependencies	2026-09-24T13:08:20.9448501Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+render	Install dependencies	2026-09-24T13:08:20.9502408Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+render	Install dependencies	2026-09-24T13:08:20.9563863Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+render	Install dependencies	2026-09-24T13:08:20.9628805Z Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (231 kB)
+render	Install dependencies	2026-09-24T13:08:20.9730578Z Downloading gradio-6.28.0-py3-none-any.whl (31.4 MB)
+render	Install dependencies	2026-09-24T13:08:21.2264164Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 31.4/31.4 MB 124.1 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.2318094Z Downloading gradio_client-2.7.1-py3-none-any.whl (63 kB)
+render	Install dependencies	2026-09-24T13:08:21.2387001Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+render	Install dependencies	2026-09-24T13:08:21.2445181Z Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+render	Install dependencies	2026-09-24T13:08:21.2503881Z Downloading groovy-0.1.2-py3-none-any.whl (14 kB)
+render	Install dependencies	2026-09-24T13:08:21.2557901Z Downloading hf_gradio-0.4.1-py3-none-any.whl (4.5 kB)
+render	Install dependencies	2026-09-24T13:08:21.2615527Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+render	Install dependencies	2026-09-24T13:08:21.2683676Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+render	Install dependencies	2026-09-24T13:08:21.2746399Z Downloading gTTS-2.5.4-py3-none-any.whl (29 kB)
+render	Install dependencies	2026-09-24T13:08:21.2815666Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+render	Install dependencies	2026-09-24T13:08:21.2887569Z Downloading huggingface_hub-1.16.1-py3-none-any.whl (668 kB)
+render	Install dependencies	2026-09-24T13:08:21.2949809Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 668.2/668.2 kB 109.5 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.2992000Z Downloading hf_xet-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.5 MB)
+render	Install dependencies	2026-09-24T13:08:21.3140052Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 335.7 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.3181399Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+render	Install dependencies	2026-09-24T13:08:21.3241061Z Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+render	Install dependencies	2026-09-24T13:08:21.3297927Z Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+render	Install dependencies	2026-09-24T13:08:21.3789005Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 356.4 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.3831062Z Downloading orjson-3.12.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (131 kB)
+render	Install dependencies	2026-09-24T13:08:21.3889303Z Downloading pandas-3.0.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.1 MB)
+render	Install dependencies	2026-09-24T13:08:21.4218556Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 354.6 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.4264113Z Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+render	Install dependencies	2026-09-24T13:08:21.4499333Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 318.5 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.4541060Z Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+render	Install dependencies	2026-09-24T13:08:21.4619613Z Downloading pydantic_core-2.46.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+render	Install dependencies	2026-09-24T13:08:21.4710271Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 263.9 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.4758723Z Downloading pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+render	Install dependencies	2026-09-24T13:08:21.4815515Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+render	Install dependencies	2026-09-24T13:08:21.4885008Z Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+render	Install dependencies	2026-09-24T13:08:21.4950969Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 153.7 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.4991040Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+render	Install dependencies	2026-09-24T13:08:21.5066863Z Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (262 kB)
+render	Install dependencies	2026-09-24T13:08:21.5151641Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+render	Install dependencies	2026-09-24T13:08:21.5207159Z Downloading safehttpx-0.1.7-py3-none-any.whl (9.0 kB)
+render	Install dependencies	2026-09-24T13:08:21.5264134Z Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+render	Install dependencies	2026-09-24T13:08:21.5319466Z Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+render	Install dependencies	2026-09-24T13:08:21.5376971Z Downloading tomlkit-0.14.0-py3-none-any.whl (39 kB)
+render	Install dependencies	2026-09-24T13:08:21.5432901Z Downloading typer-0.27.2-py3-none-any.whl (123 kB)
+render	Install dependencies	2026-09-24T13:08:21.5491334Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+render	Install dependencies	2026-09-24T13:08:21.5561529Z Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+render	Install dependencies	2026-09-24T13:08:21.5620251Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+render	Install dependencies	2026-09-24T13:08:21.5732315Z Downloading brotli-1.2.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+render	Install dependencies	2026-09-24T13:08:21.5803976Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 244.8 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.5844128Z Downloading filelock-4.0.3-py3-none-any.whl (108 kB)
+render	Install dependencies	2026-09-24T13:08:21.5905374Z Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+render	Install dependencies	2026-09-24T13:08:21.5981746Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+render	Install dependencies	2026-09-24T13:08:21.6040469Z Downloading h2-4.4.1-py3-none-any.whl (62 kB)
+render	Install dependencies	2026-09-24T13:08:21.6100307Z Downloading hpack-4.2.0-py3-none-any.whl (34 kB)
+render	Install dependencies	2026-09-24T13:08:21.6159231Z Downloading hyperframe-6.1.0-py3-none-any.whl (13 kB)
+render	Install dependencies	2026-09-24T13:08:21.6237885Z Downloading ImageHash-4.3.2-py2.py3-none-any.whl (296 kB)
+render	Install dependencies	2026-09-24T13:08:21.6320364Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+render	Install dependencies	2026-09-24T13:08:21.6378721Z Downloading propcache-0.5.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (235 kB)
+render	Install dependencies	2026-09-24T13:08:21.6437517Z Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+render	Install dependencies	2026-09-24T13:08:21.6498622Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+render	Install dependencies	2026-09-24T13:08:21.6562420Z Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+render	Install dependencies	2026-09-24T13:08:21.6626661Z Downloading pytz-2026.4-py2.py3-none-any.whl (506 kB)
+render	Install dependencies	2026-09-24T13:08:21.6696929Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+render	Install dependencies	2026-09-24T13:08:21.6763553Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+render	Install dependencies	2026-09-24T13:08:21.6835920Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 192.8 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.6882825Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+render	Install dependencies	2026-09-24T13:08:21.6960254Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+render	Install dependencies	2026-09-24T13:08:21.7033667Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+render	Install dependencies	2026-09-24T13:08:21.7088320Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+render	Install dependencies	2026-09-24T13:08:21.7142307Z Downloading structlog-26.1.0-py3-none-any.whl (73 kB)
+render	Install dependencies	2026-09-24T13:08:21.7211870Z Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+render	Install dependencies	2026-09-24T13:08:21.7265804Z Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+render	Install dependencies	2026-09-24T13:08:21.7369236Z Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+render	Install dependencies	2026-09-24T13:08:21.7435984Z Downloading uvicorn-0.53.0-py3-none-any.whl (87 kB)
+render	Install dependencies	2026-09-24T13:08:21.7527371Z Downloading pywavelets-1.9.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (4.5 MB)
+render	Install dependencies	2026-09-24T13:08:21.7850885Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 141.7 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:21.7890981Z Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+render	Install dependencies	2026-09-24T13:08:21.9140832Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 286.3 MB/s  0:00:00
+render	Install dependencies	2026-09-24T13:08:22.2145935Z Building wheels for collected packages: shorts
+render	Install dependencies	2026-09-24T13:08:22.2155345Z   Building wheel for shorts (pyproject.toml): started
+render	Install dependencies	2026-09-24T13:08:22.4212095Z   Building wheel for shorts (pyproject.toml): finished with status 'done'
+render	Install dependencies	2026-09-24T13:08:22.4218151Z   Created wheel for shorts: filename=shorts-0.1.0-py3-none-any.whl size=35850 sha256=ce5f64ec222fbf90fd131259f4eafdd9ef41a2cafa64352fcdd3d4f6e3fd6eee
+render	Install dependencies	2026-09-24T13:08:22.4220152Z   Stored in directory: /tmp/pip-ephem-wheel-cache-81x3kivg/wheels/c2/da/99/e287f165e0aa49804e54a804506ffadc0359e22d6e77615ca9
+render	Install dependencies	2026-09-24T13:08:22.4235215Z Successfully built shorts
+render	Install dependencies	2026-09-24T13:08:22.5827563Z Installing collected packages: pytz, pydub, brotli, urllib3, typing-extensions, tqdm, tomlkit, tenacity, tabulate, structlog, six, shellingham, semantic-version, pyyaml, python-multipart, python-dotenv, pygments, propcache, pillow, packaging, orjson, numpy, multidict, mdurl, markupsafe, idna, hyperframe, hpack, hf-xet, h11, groovy, fsspec, frozenlist, filelock, click, charset_normalizer, certifi, attrs, annotated-types, annotated-doc, aiolimiter, aiohappyeyeballs, yarl, uvicorn, typing-inspection, scipy, requests, PyWavelets, python-dateutil, pydantic-core, markdown-it-py, jinja2, httpcore, h2, anyio, aiosignal, starlette, rich, pydantic, pandas, imagehash, httpx, gtts, aiohttp, typer, safehttpx, pydantic-settings, fastapi, edge-tts, huggingface-hub, gradio-client, hf-gradio, gradio, shorts
+render	Install dependencies	2026-09-24T13:08:36.8995184Z 
+render	Install dependencies	2026-09-24T13:08:36.9030979Z Successfully installed PyWavelets-1.9.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiolimiter-1.3.0 aiosignal-1.4.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 brotli-1.2.0 certifi-2026.7.22 charset_normalizer-3.5.1 click-8.1.8 edge-tts-7.2.8 fastapi-0.141.1 filelock-4.0.3 frozenlist-1.8.0 fsspec-2026.9.0 gradio-6.28.0 gradio-client-2.7.1 groovy-0.1.2 gtts-2.5.4 h11-0.16.0 h2-4.4.1 hf-gradio-0.4.1 hf-xet-1.6.0 hpack-4.2.0 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-1.16.1 hyperframe-6.1.0 idna-3.20 imagehash-4.3.2 jinja2-3.1.6 markdown-it-py-4.2.0 markupsafe-3.0.3 mdurl-0.1.2 multidict-6.9.1 numpy-2.4.6 orjson-3.12.0 packaging-26.3 pandas-3.0.6 pillow-12.3.0 propcache-0.5.4 pydantic-2.13.5 pydantic-core-2.46.5 pydantic-settings-2.15.0 pydub-0.25.1 pygments-2.21.0 python-dateutil-2.9.0.post0 python-dotenv-1.2.3 python-multipart-0.0.32 pytz-2026.4 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 safehttpx-0.1.7 scipy-1.17.1 semantic-version-2.10.0 shellingham-1.5.4 shorts-0.1.0 six-1.17.0 starlette-1.7.0 structlog-26.1.0 tabulate-0.10.0 tenacity-9.1.4 tomlkit-0.14.0 tqdm-4.70.1 typer-0.27.2 typing-extensions-4.16.0 typing-inspection-0.4.4 urllib3-2.8.0 uvicorn-0.53.0 yarl-1.25.1
+render	Cache Assets	﻿2026-09-24T13:08:37.1862121Z ##[group]Run actions/cache@v4
+render	Cache Assets	2026-09-24T13:08:37.1862410Z with:
+render	Cache Assets	2026-09-24T13:08:37.1862618Z   path: ~/.cache/shorts
+render	Cache Assets	2026-09-24T13:08:37.1863019Z   key: shorts-assets-9a5058e59345e17527e1723d66b40f933fad6198f5551d9210afe5ab6de224aa
+render	Cache Assets	2026-09-24T13:08:37.1863475Z   restore-keys: shorts-assets-
+render	Cache Assets	
+render	Cache Assets	2026-09-24T13:08:37.1863743Z   enableCrossOsArchive: false
+render	Cache Assets	2026-09-24T13:08:37.1863994Z   fail-on-cache-miss: false
+render	Cache Assets	2026-09-24T13:08:37.1864247Z   lookup-only: false
+render	Cache Assets	2026-09-24T13:08:37.1864456Z   save-always: false
+render	Cache Assets	2026-09-24T13:08:37.1864648Z env:
+render	Cache Assets	2026-09-24T13:08:37.1864899Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Cache Assets	2026-09-24T13:08:37.1865332Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+render	Cache Assets	2026-09-24T13:08:37.1865751Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Cache Assets	2026-09-24T13:08:37.1866127Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Cache Assets	2026-09-24T13:08:37.1866505Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Cache Assets	2026-09-24T13:08:37.1867289Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+render	Cache Assets	2026-09-24T13:08:37.1867623Z ##[endgroup]
+render	Cache Assets	2026-09-24T13:08:37.2912005Z (node:2279) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+render	Cache Assets	2026-09-24T13:08:37.2912946Z (Use `node --trace-deprecation ...` to show where the warning was created)
+render	Cache Assets	2026-09-24T13:08:37.3434725Z Cache not found for input keys: shorts-assets-9a5058e59345e17527e1723d66b40f933fad6198f5551d9210afe5ab6de224aa, shorts-assets-
+render	Generate Video	﻿2026-09-24T13:08:37.3550508Z ##[group]Run shorts generate "The history of Rome" --tone "documentary" --duration 30 --voice "en-US-ChristopherNeural"
+render	Generate Video	2026-09-24T13:08:37.3551387Z ^[[36;1mshorts generate "The history of Rome" --tone "documentary" --duration 30 --voice "en-US-ChristopherNeural"^[[0m
+render	Generate Video	2026-09-24T13:08:37.3614743Z shell: /usr/bin/bash -e {0}
+render	Generate Video	2026-09-24T13:08:37.3615004Z env:
+render	Generate Video	2026-09-24T13:08:37.3615281Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Generate Video	2026-09-24T13:08:37.3615735Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+render	Generate Video	2026-09-24T13:08:37.3616162Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Generate Video	2026-09-24T13:08:37.3616543Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Generate Video	2026-09-24T13:08:37.3617147Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+render	Generate Video	2026-09-24T13:08:37.3617547Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+render	Generate Video	2026-09-24T13:08:37.3618247Z   GROQ_API_KEY: ***
+render	Generate Video	2026-09-24T13:08:37.3618663Z   OPENROUTER_API_KEY: ***
+render	Generate Video	2026-09-24T13:08:37.3618920Z ##[endgroup]
+render	Generate Video	2026-09-24T13:08:37.6399558Z ^[[2m2026-09-24T13:08:37.639449Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mStartup Check Complete        ^[[0m [^[[0m^[[1m^[[34mshorts.config^[[0m]^[[0m ^[[36mactive_sources^[[0m=^[[35m['Groq', 'OpenRouter', 'Wikimedia', 'Openverse (Anon)', 'Pollinations', 'Edge-TTS']^[[0m ^[[36mmissing_keys^[[0m=^[[35m['Cerebras', 'Gemini', 'Pexels', 'Pixabay', 'Unsplash', 'Openverse (OAuth)']^[[0m
+render	Generate Video	2026-09-24T13:08:38.1101748Z ^[[2m2026-09-24T13:08:38.109850Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mAttempting script generation with cerebras (qwen-3.8-27b)^[[0m [^[[0m^[[1m^[[34mshorts.script_gen^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:38.1104054Z ^[[2m2026-09-24T13:08:38.110079Z^[[0m [^[[31m^[[1merror    ^[[0m] ^[[1mProvider cerebras failed: Missing API key: CEREBRAS_API_KEY^[[0m [^[[0m^[[1m^[[34mshorts.script_gen^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:38.1106380Z ^[[2m2026-09-24T13:08:38.110262Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mAttempting script generation with openrouter (qwen/qwen3.8-27b:free)^[[0m [^[[0m^[[1m^[[34mshorts.script_gen^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:38.3840349Z ^[[2m2026-09-24T13:08:38.383685Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:39.6777749Z ^[[2m2026-09-24T13:08:39.677288Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:42.1268199Z ^[[2m2026-09-24T13:08:42.126428Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:46.8915521Z ^[[2m2026-09-24T13:08:46.891216Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:46.8924165Z ^[[2m2026-09-24T13:08:46.892192Z^[[0m [^[[31m^[[1merror    ^[[0m] ^[[1mProvider openrouter failed: Received retryable status: 429^[[0m [^[[0m^[[1m^[[34mshorts.script_gen^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:46.8926069Z ^[[2m2026-09-24T13:08:46.892409Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mAttempting script generation with groq (qwen/qwen3.8-27b)^[[0m [^[[0m^[[1m^[[34mshorts.script_gen^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:47.9673073Z ^[[2m2026-09-24T13:08:47.967011Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:47.9684162Z ^[[2m2026-09-24T13:08:47.968213Z^[[0m [^[[33m^[[1mwarning  ^[[0m] ^[[1mWord count 55 out of bounds (63-86). Retrying...^[[0m [^[[0m^[[1m^[[34mshorts.script_gen^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:48.0116001Z ^[[2m2026-09-24T13:08:48.011314Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:08:48.0123137Z ^[[2m2026-09-24T13:08:48.012062Z^[[0m [^[[33m^[[1mwarning  ^[[0m] ^[[1mRate limited by https://api.groq.com/openai/v1/chat/completions. Honor Retry-After: 326s.^[[0m [^[[0m^[[1m^[[34mshorts.http^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:14:15.6650324Z ^[[2m2026-09-24T13:14:15.664633Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:14:15.6655704Z ^[[2m2026-09-24T13:14:15.665344Z^[[0m [^[[33m^[[1mwarning  ^[[0m] ^[[1mRate limited by https://api.groq.com/openai/v1/chat/completions. Honor Retry-After: 44s.^[[0m [^[[0m^[[1m^[[34mshorts.http^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:15:02.0767218Z ^[[2m2026-09-24T13:15:02.076349Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:15:02.0772894Z ^[[2m2026-09-24T13:15:02.077055Z^[[0m [^[[33m^[[1mwarning  ^[[0m] ^[[1mRate limited by https://api.groq.com/openai/v1/chat/completions. Honor Retry-After: 117s.^[[0m [^[[0m^[[1m^[[34mshorts.http^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:04.2623856Z ^[[2m2026-09-24T13:17:04.261960Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:04.2636578Z ^[[2m2026-09-24T13:17:04.263389Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mGenerating TTS via Edge-TTS (voice: en-US-ChristopherNeural)^[[0m [^[[0m^[[1m^[[34mshorts.tts^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:04.5383900Z ^[[2m2026-09-24T13:17:04.537923Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://api.openverse.org/v1/images/?q=ancient+roman+forum+ruins&license_type=commercial%2Cmodification&page_size=4 "HTTP/1.1 200 OK"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:04.6664453Z ^[[2m2026-09-24T13:17:04.666010Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://api.openverse.org/v1/images/?q=roman+aqueduct+pont+du+gard&license_type=commercial%2Cmodification&page_size=4 "HTTP/1.1 200 OK"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:04.9537979Z ^[[2m2026-09-24T13:17:04.953362Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://image.pollinations.ai/prompt/roman%20aqueduct%20pont%20du%20gard%20variant%200?width=1080&height=1920&nologo=true "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:05.5717294Z ^[[2m2026-09-24T13:17:05.571283Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://api.openverse.org/v1/images/?q=colosseum+rome+italy+sunset&license_type=commercial%2Cmodification&page_size=4 "HTTP/1.1 200 OK"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:05.5746044Z ^[[2m2026-09-24T13:17:05.574315Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://api.openverse.org/v1/images/?q=roman+soldiers+painting+battle&license_type=commercial%2Cmodification&page_size=4 "HTTP/1.1 200 OK"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:05.5753808Z ^[[2m2026-09-24T13:17:05.575237Z^[[0m [^[[33m^[[1mwarning  ^[[0m] ^[[1mOpenverse search failed: 1 validation error for ImageResult
+render	Generate Video	2026-09-24T13:17:05.5754564Z attribution
+render	Generate Video	2026-09-24T13:17:05.5755041Z   Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+render	Generate Video	2026-09-24T13:17:05.5756181Z     For further information visit https://errors.pydantic.dev/2.13/v/string_type^[[0m [^[[0m^[[1m^[[34mshorts.sources.openverse^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:05.8163461Z ^[[2m2026-09-24T13:17:05.815931Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://image.pollinations.ai/prompt/colosseum%20rome%20italy%20sunset%20variant%200?width=1080&height=1920&nologo=true "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:05.8727443Z ^[[2m2026-09-24T13:17:05.872364Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://image.pollinations.ai/prompt/roman%20soldiers%20painting%20battle%20variant%200?width=1080&height=1920&nologo=true "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:06.5763186Z ^[[2m2026-09-24T13:17:06.575921Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://image.pollinations.ai/prompt/roman%20aqueduct%20pont%20du%20gard%20variant%200?width=1080&height=1920&nologo=true "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:07.0663801Z ^[[2m2026-09-24T13:17:07.065735Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://image.pollinations.ai/prompt/ancient%20roman%20forum%20ruins%20variant%200?width=1080&height=1920&nologo=true "HTTP/1.1 200 OK"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:07.6219458Z ^[[2m2026-09-24T13:17:07.621468Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://image.pollinations.ai/prompt/roman%20soldiers%20painting%20battle%20variant%200?width=1080&height=1920&nologo=true "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:08.9435348Z ^[[2m2026-09-24T13:17:08.943243Z^[[0m [^[[33m^[[1mwarning  ^[[0m] ^[[1mEdge-TTS failed: [Errno 2] No such file or directory: 'ffprobe'^[[0m [^[[0m^[[1m^[[34mshorts.tts^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:08.9437522Z ^[[2m2026-09-24T13:17:08.943426Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mFalling back to gTTS...       ^[[0m [^[[0m^[[1m^[[34mshorts.tts^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:09.1460612Z ^[[2m2026-09-24T13:17:09.145621Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://image.pollinations.ai/prompt/roman%20aqueduct%20pont%20du%20gard%20variant%200?width=1080&height=1920&nologo=true "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:10.0348199Z ^[[2m2026-09-24T13:17:10.034428Z^[[0m [^[[32m^[[1minfo     ^[[0m] ^[[1mHTTP Request: GET https://image.pollinations.ai/prompt/roman%20soldiers%20painting%20battle%20variant%200?width=1080&height=1920&nologo=true "HTTP/1.1 429 Too Many Requests"^[[0m [^[[0m^[[1m^[[34mhttpx^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:11.6750948Z ^[[2m2026-09-24T13:17:11.674805Z^[[0m [^[[31m^[[1merror    ^[[0m] ^[[1mgTTS failed: [Errno 2] No such file or directory: 'ffprobe'^[[0m [^[[0m^[[1m^[[34mshorts.tts^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:11.7722775Z ^[[2m2026-09-24T13:17:11.675042Z^[[0m [^[[31m^[[1merror    ^[[0m] ^[[1mPipeline failed               ^[[0m [^[[0m^[[1m^[[34mshorts.pipeline^[[0m]^[[0m
+render	Generate Video	2026-09-24T13:17:11.7725659Z ^[[31m╭─^[[0m^[[31m────────────────────^[[0m^[[31m ^[[0m^[[1;31mTraceback ^[[0m^[[1;2;31m(most recent call last)^[[0m^[[31m ^[[0m^[[31m─────────────────────^[[0m^[[31m─╮^[[0m
+render	Generate Video	2026-09-24T13:17:11.7727887Z ^[[31m│^[[0m ^[[2m/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/shorts/^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7729683Z ^[[31m│^[[0m ^[[1mpipeline.py^[[0m:139 in generate                                                  ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7731086Z ^[[31m│^[[0m                                                                              ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7732516Z ^[[31m│^[[0m   ^[[2m136 ^[[0m^[[2m│   │   │   ^[[0mpitch=job.voice_pitch                                      ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7733817Z ^[[31m│^[[0m   ^[[2m137 ^[[0m^[[2m│   │   ^[[0m)                                                              ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7734621Z ^[[31m│^[[0m   ^[[2m138 ^[[0m^[[2m│   │   ^[[0m                                                               ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7735437Z ^[[31m│^[[0m ^[[31m❱ ^[[0m139 ^[[2m│   │   ^[[0mresults = ^[[94mawait^[[0m asyncio.gather(tts_task, *image_tasks)         ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7736415Z ^[[31m│^[[0m   ^[[2m140 ^[[0m^[[2m│   │   ^[[0m                                                               ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7737659Z ^[[31m│^[[0m   ^[[2m141 ^[[0m^[[2m│   │   ^[[0mvoice_track: VoiceTrack = results[^[[94m0^[[0m]                           ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7738553Z ^[[31m│^[[0m   ^[[2m142 ^[[0m^[[2m│   │   ^[[0mimage_results = results[^[[94m1^[[0m:]                                    ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7739233Z ^[[31m│^[[0m                                                                              ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7740012Z ^[[31m│^[[0m ^[[34m╭─^[[0m^[[34m────────────────────────────────^[[0m^[[34m locals ^[[0m^[[34m────────────────────────────────^[[0m^[[34m─╮^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7740922Z ^[[31m│^[[0m ^[[34m│^[[0m    ^[[3;33mdate_str^[[0m^[[31m =^[[0m ^[[32m'20260924'^[[0m                                                 ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7742184Z ^[[31m│^[[0m ^[[34m│^[[0m           ^[[3;33me^[[0m^[[31m =^[[0m ^[[1;35mRuntimeError^[[0m^[[1m(^[[0m^[[32m'All TTS engines failed in the cascade.'^[[0m^[[1m)^[[0m     ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7743178Z ^[[31m│^[[0m ^[[34m│^[[0m ^[[3;33mimage_tasks^[[0m^[[31m =^[[0m ^[[1m[^[[0m                                                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7744094Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[1m<^[[0m^[[1;95mcoroutine^[[0m^[[39m object generate.<locals>.fetch_scene_image ^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7744960Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[39mat ^[[0m^[[1;36m0x7f24f6b9dcf0^[[0m^[[39m>,^[[0m                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7746157Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[39m<coroutine object generate.<locals>.fetch_scene_image ^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7747565Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[39mat ^[[0m^[[1;36m0x7f24f6b9e020^[[0m^[[39m>,^[[0m                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7748453Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[39m<coroutine object generate.<locals>.fetch_scene_image ^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7749751Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[39mat ^[[0m^[[1;36m0x7f24f6b9e240^[[0m^[[39m>,^[[0m                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7750537Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[39m<coroutine object generate.<locals>.fetch_scene_image ^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7751314Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[39mat ^[[0m^[[1;36m0x7f24f6b9cf20^[[0m^[[1m>^[[0m                                         ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7751973Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[1m]^[[0m                                                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7752903Z ^[[31m│^[[0m ^[[34m│^[[0m         ^[[3;33mjob^[[0m^[[31m =^[[0m ^[[1;35mJobSpec^[[0m^[[1m(^[[0m                                                   ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7753729Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mtopic^[[0m=^[[32m'The history of Rome'^[[0m,                           ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7754520Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mtone^[[0m=^[[32m'documentary'^[[0m,                                    ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7755286Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mduration^[[0m=^[[1;36m30^[[0m,                                           ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7756052Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mvoice_engine^[[0m=^[[32m'edge-tts'^[[0m,                               ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7757088Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mvoice_lang^[[0m=^[[32m'en'^[[0m,                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7757930Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mvoice_id^[[0m=^[[32m'en-US-ChristopherNeural'^[[0m,                    ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7758734Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mvoice_rate^[[0m=^[[32m'+0%'^[[0m,                                      ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7759487Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mvoice_pitch^[[0m=^[[32m'+0Hz'^[[0m,                                    ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7760231Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mimage_sources^[[0m=^[[1m[^[[0m                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7760954Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'wikimedia'^[[0m,                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7761644Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'openverse'^[[0m,                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7763001Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'pexels'^[[0m,                                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7764615Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'pixabay'^[[0m,                                         ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7765794Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'unsplash'^[[0m                                         ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7767183Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[1m]^[[0m,                                                     ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7768442Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33msubject_hint^[[0m=^[[32m'auto'^[[0m,                                   ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7769463Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mmotion_style^[[0m=^[[32m'auto'^[[0m,                                   ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7770237Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mtransition^[[0m=^[[32m'fade'^[[0m,                                     ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7771045Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mallow_fallback^[[0m=^[[3;92mTrue^[[0m,                                   ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7771827Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mstyle^[[0m=^[[32m'karaoke'^[[0m,                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7772611Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mfont_family^[[0m=^[[32m'Montserrat ExtraBold'^[[0m,                    ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7773398Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mfont_size^[[0m=^[[1;36m24^[[0m,                                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7774188Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mprimary_color^[[0m=^[[32m'&H00FFFFFF'^[[0m,                            ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7775757Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mhighlight_color^[[0m=^[[32m'&H0000FFFF'^[[0m,                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7776562Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33moutline_color^[[0m=^[[32m'&H00000000'^[[0m,                            ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7777680Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mvertical_position^[[0m=^[[1;36m80^[[0m,                                  ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7778482Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33muppercase^[[0m=^[[3;92mTrue^[[0m,                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7779247Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mintro_path^[[0m=^[[3;35mNone^[[0m,                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7780005Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33moutro_path^[[0m=^[[3;35mNone^[[0m,                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7780779Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mlogo_path^[[0m=^[[3;35mNone^[[0m,                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7781552Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mlogo_position^[[0m=^[[32m'top_right'^[[0m,                             ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7782344Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mlogo_margin^[[0m=^[[1;36m40^[[0m,                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7783150Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mlogo_scale^[[0m=^[[1;36m0^[[0m^[[1;36m.15^[[0m,                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7783963Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mlogo_opacity^[[0m=^[[1;36m1^[[0m^[[1;36m.0^[[0m,                                      ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7784763Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mmusic_path^[[0m=^[[3;35mNone^[[0m,                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7785721Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mmusic_gain_db^[[0m=^[[1;36m-18^[[0m,                                     ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7786486Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mrender_preset^[[0m=^[[32m'fast'^[[0m,                                  ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7787498Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mrender_crf^[[0m=^[[1;36m23^[[0m,                                         ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7788346Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mrender_fps^[[0m=^[[1;36m30^[[0m,                                         ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7789166Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mrender_resolution^[[0m=^[[32m'1080x1920'^[[0m,                         ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7789965Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mkeep_temp^[[0m=^[[3;91mFalse^[[0m                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7790649Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[1m)^[[0m                                                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7791382Z ^[[31m│^[[0m ^[[34m│^[[0m      ^[[3;33mjob_id^[[0m^[[31m =^[[0m ^[[32m'5a6d6fca'^[[0m                                                 ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7792739Z ^[[31m│^[[0m ^[[34m│^[[0m     ^[[3;33mmp4_out^[[0m^[[31m =^[[0m ^[[1;35mPosixPath^[[0m^[[1m(^[[0m^[[32m'output/20260924_The_history_of_Rome_5a6d6fca.m…^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7793803Z ^[[31m│^[[0m ^[[34m│^[[0m     ^[[3;33mout_dir^[[0m^[[31m =^[[0m ^[[1;35mPosixPath^[[0m^[[1m(^[[0m^[[32m'output'^[[0m^[[1m)^[[0m                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7794743Z ^[[31m│^[[0m ^[[34m│^[[0m     ^[[3;33mrun_dir^[[0m^[[31m =^[[0m ^[[1;35mPosixPath^[[0m^[[1m(^[[0m^[[32m'runs/5a6d6fca'^[[0m^[[1m)^[[0m                                 ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7795897Z ^[[31m│^[[0m ^[[34m│^[[0m      ^[[3;33mscript^[[0m^[[31m =^[[0m ^[[1;35mGeneratedScript^[[0m^[[1m(^[[0m                                           ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7796997Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mtitle^[[0m=^[[32m'Rise and Fall of Rome'^[[0m,                         ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7797838Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mhook^[[0m=^[[32m'One city changed everything.'^[[0m,                   ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7798599Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mscenes^[[0m=^[[1m[^[[0m                                               ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7799333Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[1;35mScriptScene^[[0m^[[1m(^[[0m                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7800124Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33mnarration^[[0m=^[[32m'In 753 BCE, Romulus founded Rome on^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7800935Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[32mseven hills. What began as a small village g'^[[0m+^[[1;36m57^[[0m,          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7801761Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33mimage_query^[[0m=^[[32m'ancient roman forum ruins'^[[0m,       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7802549Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33msubject_type^[[0m=^[[32m'place'^[[0m,                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7803329Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33msubject_name^[[0m=^[[3;35mNone^[[0m                              ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7804031Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[1m)^[[0m,                                                 ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7804741Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[1;35mScriptScene^[[0m^[[1m(^[[0m                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7805681Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33mnarration^[[0m=^[[32m'Emperors like Augustus expanded its^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7806486Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[32mborders to Britain and Syria. Roman law, roa'^[[0m+^[[1;36m65^[[0m,          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7807557Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33mimage_query^[[0m=^[[32m'roman aqueduct pont du gard'^[[0m,     ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7808354Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33msubject_type^[[0m=^[[32m'place'^[[0m,                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7809123Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33msubject_name^[[0m=^[[3;35mNone^[[0m                              ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7809993Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[1m)^[[0m,                                                 ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7810695Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[1;35mScriptScene^[[0m^[[1m(^[[0m                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7811470Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33mnarration^[[0m=^[[32m'However, by the fifth century CE, ^[[0m  ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7812281Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[32mpolitical corruption and military invasions le'^[[0m+^[[1;36m45^[[0m,        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7813105Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33mimage_query^[[0m=^[[32m'roman soldiers painting battle'^[[0m,  ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7813905Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33msubject_type^[[0m=^[[32m'concept'^[[0m,                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7814693Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33msubject_name^[[0m=^[[3;35mNone^[[0m                              ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7815407Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[1m)^[[0m,                                                 ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7816095Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[1;35mScriptScene^[[0m^[[1m(^[[0m                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7817120Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33mnarration^[[0m=^[[32m'Today, its ruins stand as a ^[[0m        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7817952Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[32mmonument to human ambition, proving that empires, no'^[[0m+^[[1;36m36^[[0m,  ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7818770Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33mimage_query^[[0m=^[[32m'colosseum rome italy sunset'^[[0m,     ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7819574Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33msubject_type^[[0m=^[[32m'place'^[[0m,                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7820504Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   │   ^[[0m^[[33msubject_name^[[0m=^[[3;35mNone^[[0m                              ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7821221Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[1m)^[[0m                                                  ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7821866Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[1m]^[[0m,                                                     ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7822621Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mcta^[[0m=^[[32m'Follow for more history.'^[[0m,                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7823372Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[33mhashtags^[[0m=^[[1m[^[[0m                                             ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7824086Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'#history'^[[0m,                                        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7824764Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'#rome'^[[0m,                                           ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7825439Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'#documentary'^[[0m,                                    ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7826132Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'#ancientworld'^[[0m,                                   ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7827082Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   │   ^[[0m^[[32m'#facts'^[[0m                                           ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7827741Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[2;32m│   ^[[0m^[[1m]^[[0m                                                      ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7828518Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[1m)^[[0m                                                          ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7829448Z ^[[31m│^[[0m ^[[34m│^[[0m         ^[[3;33msem^[[0m^[[31m =^[[0m ^[[1m<^[[0m^[[1;95masyncio.locks.Semaphore^[[0m^[[39m object at ^[[0m^[[1;36m0x7f24f58a4f50^[[0m^[[39m ^[[0m         ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7830421Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[1;39m[^[[0m^[[39munlocked, valu^[[0m^[[1;92me:1^[[0m^[[1;39m]^[[0m^[[1m>^[[0m                                       ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7831362Z ^[[31m│^[[0m ^[[34m│^[[0m ^[[3;33msidecar_out^[[0m^[[31m =^[[0m ^[[1;35mPosixPath^[[0m^[[1m(^[[0m^[[32m'output/20260924_The_history_of_Rome_5a6d6fca.j…^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7832261Z ^[[31m│^[[0m ^[[34m│^[[0m        ^[[3;33mslug^[[0m^[[31m =^[[0m ^[[32m'The_history_of_Rome'^[[0m                                      ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7833212Z ^[[31m│^[[0m ^[[34m│^[[0m    ^[[3;33mtts_task^[[0m^[[31m =^[[0m ^[[1m<^[[0m^[[1;95mcoroutine^[[0m^[[39m object generate_voice at ^[[0m^[[1;36m0x7f25073e28a0^[[0m^[[1m>^[[0m        ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7834096Z ^[[31m│^[[0m ^[[34m╰──────────────────────────────────────────────────────────────────────────╯^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7834622Z ^[[31m│^[[0m                                                                              ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7835243Z ^[[31m│^[[0m ^[[2m/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/shorts/^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7835924Z ^[[31m│^[[0m ^[[1mtts.py^[[0m:202 in generate_voice                                                 ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7836459Z ^[[31m│^[[0m                                                                              ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7837522Z ^[[31m│^[[0m   ^[[2m199 ^[[0m^[[2m│   ^[[0m^[[94mexcept^[[0m ^[[96mException^[[0m ^[[94mas^[[0m e:                                             ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7838430Z ^[[31m│^[[0m   ^[[2m200 ^[[0m^[[2m│   │   ^[[0mlogger.error(^[[33mf^[[0m^[[33m"^[[0m^[[33mgTTS failed: ^[[0m^[[33m{^[[0me^[[33m}^[[0m^[[33m"^[[0m)                              ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7839364Z ^[[31m│^[[0m   ^[[2m201 ^[[0m^[[2m│   ^[[0m                                                                   ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7840299Z ^[[31m│^[[0m ^[[31m❱ ^[[0m202 ^[[2m│   ^[[0m^[[1;4;94mraise^[[0m^[[1;4m ^[[0m^[[1;4;96mRuntimeError^[[0m^[[1;4m(^[[0m^[[1;4;33m"^[[0m^[[1;4;33mAll TTS engines failed in the cascade.^[[0m^[[1;4;33m"^[[0m^[[1;4m)^[[0m       ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7841137Z ^[[31m│^[[0m   ^[[2m203 ^[[0m                                                                       ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7841648Z ^[[31m│^[[0m   ^[[2m204 ^[[0m                                                                       ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7842304Z ^[[31m│^[[0m   ^[[2m205 ^[[0m^[[94masync^[[0m ^[[94mdef^[[0m^[[90m ^[[0m^[[92mmix_audio^[[0m(                                                   ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7842944Z ^[[31m│^[[0m                                                                              ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7843630Z ^[[31m│^[[0m ^[[34m╭─^[[0m^[[34m────────────────────────────────^[[0m^[[34m locals ^[[0m^[[34m────────────────────────────────^[[0m^[[34m─╮^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7844539Z ^[[31m│^[[0m ^[[34m│^[[0m     ^[[3;33mhashlib^[[0m^[[31m =^[[0m ^[[1m<^[[0m^[[1;95mmodule^[[0m^[[39m ^[[0m^[[32m'hashlib'^[[0m^[[39m from ^[[0m                                    ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7845424Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[32m'/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/h…^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7846354Z ^[[31m│^[[0m ^[[34m│^[[0m ^[[3;33moutput_path^[[0m^[[31m =^[[0m ^[[1;35mPosixPath^[[0m^[[1m(^[[0m^[[32m'.cache/shorts/0cee40b79326937f8683dbecdcbdb4b0…^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7847536Z ^[[31m│^[[0m ^[[34m│^[[0m       ^[[3;33mpitch^[[0m^[[31m =^[[0m ^[[32m'+0Hz'^[[0m                                                     ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7848264Z ^[[31m│^[[0m ^[[34m│^[[0m        ^[[3;33mrate^[[0m^[[31m =^[[0m ^[[32m'+0%'^[[0m                                                      ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7849238Z ^[[31m│^[[0m ^[[34m│^[[0m        ^[[3;33mtext^[[0m^[[31m =^[[0m ^[[32m'In 753 BCE, Romulus founded Rome on seven hills. What ^[[0m    ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7850042Z ^[[31m│^[[0m ^[[34m│^[[0m               ^[[32mbegan as a small village g'^[[0m+^[[1;36m446^[[0m                            ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7850901Z ^[[31m│^[[0m ^[[34m│^[[0m   ^[[3;33mtext_hash^[[0m^[[31m =^[[0m ^[[32m'0cee40b79326937f8683dbecdcbdb4b04b2282ea10dd6bb470a5f127…^[[0m ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7851798Z ^[[31m│^[[0m ^[[34m│^[[0m    ^[[3;33mvoice_id^[[0m^[[31m =^[[0m ^[[32m'en-US-ChristopherNeural'^[[0m                                  ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7852577Z ^[[31m│^[[0m ^[[34m│^[[0m      ^[[3;33mvolume^[[0m^[[31m =^[[0m ^[[32m'+0%'^[[0m                                                      ^[[34m│^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7853270Z ^[[31m│^[[0m ^[[34m╰──────────────────────────────────────────────────────────────────────────╯^[[0m ^[[31m│^[[0m
+render	Generate Video	2026-09-24T13:17:11.7853844Z ^[[31m╰──────────────────────────────────────────────────────────────────────────────╯^[[0m
+render	Generate Video	2026-09-24T13:17:11.7854330Z ^[[1;91mRuntimeError: ^[[0mAll TTS engines failed in the cascade.
+render	Generate Video	2026-09-24T13:17:11.7854585Z 
+render	Generate Video	2026-09-24T13:17:11.7854625Z 
+render	Generate Video	2026-09-24T13:17:11.7854755Z Error: All TTS engines failed in the cascade.
+render	Generate Video	2026-09-24T13:17:11.7855246Z   All TTS engines failed in the cascade. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100%
+render	Generate Video	2026-09-24T13:17:11.8862527Z ##[error]Process completed with exit code 1.
+render	Post Run actions/checkout@v4	﻿2026-09-24T13:17:11.9049448Z Post job cleanup.
+render	Post Run actions/checkout@v4	2026-09-24T13:17:11.9957687Z [command]/usr/bin/git version
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0037591Z git version 2.55.0
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0094205Z Temporarily overriding HOME='/home/runner/work/_temp/a365ae62-7d5e-4d80-a249-7afa7f41b724' before making global git config changes
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0095961Z Adding repository directory to the temporary git global config as a safe directory
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0102857Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/faceless-shorts-generator/faceless-shorts-generator
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0163260Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0205293Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0533301Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0574782Z http.https://github.com/.extraheader
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0591468Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0635845Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.0988734Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+render	Post Run actions/checkout@v4	2026-09-24T13:17:12.1043793Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+render	Complete job	﻿2026-09-24T13:17:12.1498527Z Cleaning up orphan processes
+render	Complete job	2026-09-24T13:17:12.1796160Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4, actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

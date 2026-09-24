@@ -1,0 +1,39 @@
+ffmpeg -y -loop 1 -framerate 30 -t 60 -i runs/f2c7200a/scene_0.jpeg -loop 1 -framerate 30 -t 60 -i runs/f2c7200a/scene_1.jpeg -loop 1 -framerate 30 -t 60 -i runs/f2c7200a/scene_2.jpg -loop 1 -framerate 30 -t 60 -i runs/f2c7200a/scene_3.jpg -i .cache/shorts/90c8fc1017d840630b63fb16aa3b8ff27457e1c836276f3aa0b8ff3b3181a06b.mp3 -filter_complex [0:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v0];[base_v0]zoompan=z=1.2:x='if(eq(in,1),iw*0.2,x-2)':y='(ih-ih/zoom)/2':d=202:s=1080x1920:fps=30[v0];
+[1:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v1];[base_v1]zoompan=z='if(lte(zoom,1.0),1.5,max(1.001,zoom-0.0015))':d=202:s=1080x1920:fps=30[v1];
+[2:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v2];[base_v2]zoompan=z=1.2:x='(iw-iw/zoom)/2':y='if(eq(in,1),ih*0.2,y-2)':d=175:s=1080x1920:fps=30[v2];
+[3:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v3];[base_v3]zoompan=z=1.2:x='(iw-iw/zoom)/2':y='if(eq(in,1),0,y+2)':d=166:s=1080x1920:fps=30[v3];
+[v0][v1]xfade=transition=fade:duration=0.3:offset=6.442153846153847[xfade1];
+[xfade1][v2]xfade=transition=fade:duration=0.3:offset=12.884307692307694[xfade2];
+[xfade2][v3]xfade=transition=fade:duration=0.3:offset=18.40615384615385[xfade3];
+[xfade3]subtitles='runs/f2c7200a/captions.ass':fontsdir=assets/fonts[with_subs];
+[with_subs]null[with_progress] -map [with_progress] -map 4:a -c:v libx264 -preset ultrafast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart -r 30 output/20260924_India_s_anti_defecti_f2c7200a.mp4
+
+FILTER COMPLEX:
+[0:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v0];[base_v0]zoompan=z=1.2:x='if(eq(in,1),iw*0.2,x-2)':y='(ih-ih/zoom)/2':d=202:s=1080x1920:fps=30[v0];
+[1:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v1];[base_v1]zoompan=z='if(lte(zoom,1.0),1.5,max(1.001,zoom-0.0015))':d=202:s=1080x1920:fps=30[v1];
+[2:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v2];[base_v2]zoompan=z=1.2:x='(iw-iw/zoom)/2':y='if(eq(in,1),ih*0.2,y-2)':d=175:s=1080x1920:fps=30[v2];
+[3:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v3];[base_v3]zoompan=z=1.2:x='(iw-iw/zoom)/2':y='if(eq(in,1),0,y+2)':d=166:s=1080x1920:fps=30[v3];
+[v0][v1]xfade=transition=fade:duration=0.3:offset=6.442153846153847[xfade1];
+[xfade1][v2]xfade=transition=fade:duration=0.3:offset=12.884307692307694[xfade2];
+[xfade2][v3]xfade=transition=fade:duration=0.3:offset=18.40615384615385[xfade3];
+[xfade3]subtitles='runs/f2c7200a/captions.ass':fontsdir=assets/fonts[with_subs];
+[with_subs]null[with_progress]
+
+STDERR:
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+[AVFilterGraph @ 0x82b00c000] No option name near 'runs/f2c7200a/captions.ass:fontsdir=assets/fonts'
+[AVFilterGraph @ 0x82b00c000] Error parsing a filter description around: [with_subs];
+[with_subs]null[with_progress]
+[AVFilterGraph @ 0x82b00c000] Error parsing filterchain '[xfade3]subtitles='runs/f2c7200a/captions.ass':fontsdir=assets/fonts[with_subs];
+[with_subs]null[with_progress]' around: [with_subs];
+[with_subs]null[with_progress]
+Error : Invalid argument

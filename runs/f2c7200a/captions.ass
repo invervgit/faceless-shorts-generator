@@ -1,0 +1,27 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 1
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: BaseStyle,Montserrat ExtraBold,24,&H0000FFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,4,2,8,20,20,1478,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.92,BaseStyle,,0,0,0,,{\k46}IN {\k46}1985,
+Dialogue: 0,0:00:00.92,0:00:02.76,BaseStyle,,0,0,0,,{\k46}INDIA {\k46}PASSED {\k46}THE {\k46}TENTH
+Dialogue: 0,0:00:02.76,0:00:04.60,BaseStyle,,0,0,0,,{\k46}SCHEDULE {\k46}TO {\k46}ITS {\k46}CONSTITUTION,
+Dialogue: 0,0:00:04.60,0:00:06.44,BaseStyle,,0,0,0,,{\k46}CREATING {\k46}THE {\k46}ANTI-DEFECTION {\k46}LAW.
+Dialogue: 0,0:00:06.44,0:00:08.28,BaseStyle,,0,0,0,,{\k46}IT {\k46}ALLOWS {\k46}THE {\k46}SPEAKER
+Dialogue: 0,0:00:08.28,0:00:10.12,BaseStyle,,0,0,0,,{\k46}TO {\k46}DISQUALIFY {\k46}MPS {\k46}WHO
+Dialogue: 0,0:00:10.12,0:00:11.96,BaseStyle,,0,0,0,,{\k46}VOLUNTARILY {\k46}GIVE {\k46}UP {\k46}THEIR
+Dialogue: 0,0:00:11.96,0:00:12.88,BaseStyle,,0,0,0,,{\k46}PARTY {\k46}MEMBERSHIP.
+Dialogue: 0,0:00:12.88,0:00:13.34,BaseStyle,,0,0,0,,{\k46}HOWEVER,
+Dialogue: 0,0:00:13.34,0:00:15.19,BaseStyle,,0,0,0,,{\k46}THE {\k46}LAW {\k46}PERMITS {\k46}A
+Dialogue: 0,0:00:15.19,0:00:17.03,BaseStyle,,0,0,0,,{\k46}ONE-THIRD {\k46}SPLIT {\k46}OF {\k46}A
+Dialogue: 0,0:00:17.03,0:00:18.41,BaseStyle,,0,0,0,,{\k46}PARTY {\k46}WITHOUT {\k46}DISQUALIFICATION.
+Dialogue: 0,0:00:18.41,0:00:20.25,BaseStyle,,0,0,0,,{\k46}CRITICS {\k46}ARGUE {\k46}THIS {\k46}LOOPHOLE
+Dialogue: 0,0:00:20.25,0:00:22.09,BaseStyle,,0,0,0,,{\k46}ENABLES {\k46}INTERNAL {\k46}FACTIONALISM {\k46}WHILE
+Dialogue: 0,0:00:22.09,0:00:23.93,BaseStyle,,0,0,0,,{\k46}CLAIMING {\k46}TO {\k46}STABILIZE {\k46}COALITIONS.

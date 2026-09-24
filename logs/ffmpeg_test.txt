@@ -1,0 +1,10 @@
+ffmpeg -y -loop 1 -framerate 30 -t 60 -i runs/test/scene_0.jpg -i runs/test/audio.mp3 -filter_complex [0:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v0];[base_v0]zoompan=z=1.0:d=30:s=1080x1920:fps=30[v0];
+[v0]subtitles='runs/test/captions.ass':fontsdir=assets/fonts[with_subs];
+[with_subs]drawbox=x=0:y=H-10:w='W*(t/1.0)':h=10:color=red@0.8:t=fill[with_progress];
+[with_progress]copy[final_v] -map [final_v] -map [1:a] -c:v libx264 -preset fast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart -r 30 output/test_video.mp4
+
+FILTER COMPLEX:
+[0:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v0];[base_v0]zoompan=z=1.0:d=30:s=1080x1920:fps=30[v0];
+[v0]subtitles='runs/test/captions.ass':fontsdir=assets/fonts[with_subs];
+[with_subs]drawbox=x=0:y=H-10:w='W*(t/1.0)':h=10:color=red@0.8:t=fill[with_progress];
+[with_progress]copy[final_v]

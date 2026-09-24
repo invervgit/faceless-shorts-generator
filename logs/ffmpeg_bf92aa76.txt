@@ -1,0 +1,20 @@
+ffmpeg -y -loop 1 -framerate 30 -t 60 -i runs/bf92aa76/scene_0.jpeg -loop 1 -framerate 30 -t 60 -i runs/bf92aa76/scene_1.jpeg -loop 1 -framerate 30 -t 60 -i runs/bf92aa76/scene_2.jpeg -loop 1 -framerate 30 -t 60 -i runs/bf92aa76/scene_3.jpeg -i .cache/shorts/39e02fe851e43a7bb1530b1bcff2c6f71a097e749d411bdf14ed6baa453ed1c8.mp3 -filter_complex [0:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v0];[base_v0]zoompan=z=1.2:x='if(eq(in,1),iw*0.2,x-2)':y='(ih-ih/zoom)/2':d=237:s=1080x1920:fps=30[v0];
+[1:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v1];[base_v1]zoompan=z=1.2:x='(iw-iw/zoom)/2':y='if(eq(in,1),0,y+2)':d=199:s=1080x1920:fps=30[v1];
+[2:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v2];[base_v2]zoompan=z=1.2:x='if(eq(in,1),iw*0.2,x-2)':y='(ih-ih/zoom)/2':d=263:s=1080x1920:fps=30[v2];
+[3:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v3];[base_v3]zoompan=z='min(zoom+0.0015,1.5)':d=279:s=1080x1920:fps=30[v3];
+[v0][v1]xfade=transition=fade:duration=0.3:offset=7.61472[xfade1];
+[xfade1][v2]xfade=transition=fade:duration=0.3:offset=13.960320000000001[xfade2];
+[xfade2][v3]xfade=transition=fade:duration=0.3:offset=22.421120000000002[xfade3];
+[xfade3]subtitles=runs/bf92aa76/captions.ass:fontsdir=assets/fonts[with_subs];
+[with_subs]null[with_progress] -map [with_progress] -map 4:a -c:v libx264 -preset ultrafast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart -r 30 output/20260924_India_s_anti_defecti_bf92aa76.mp4
+
+FILTER COMPLEX:
+[0:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v0];[base_v0]zoompan=z=1.2:x='if(eq(in,1),iw*0.2,x-2)':y='(ih-ih/zoom)/2':d=237:s=1080x1920:fps=30[v0];
+[1:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v1];[base_v1]zoompan=z=1.2:x='(iw-iw/zoom)/2':y='if(eq(in,1),0,y+2)':d=199:s=1080x1920:fps=30[v1];
+[2:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v2];[base_v2]zoompan=z=1.2:x='if(eq(in,1),iw*0.2,x-2)':y='(ih-ih/zoom)/2':d=263:s=1080x1920:fps=30[v2];
+[3:v]scale=2160x3840:force_original_aspect_ratio=increase,crop=2160:3840,setsar=1[base_v3];[base_v3]zoompan=z='min(zoom+0.0015,1.5)':d=279:s=1080x1920:fps=30[v3];
+[v0][v1]xfade=transition=fade:duration=0.3:offset=7.61472[xfade1];
+[xfade1][v2]xfade=transition=fade:duration=0.3:offset=13.960320000000001[xfade2];
+[xfade2][v3]xfade=transition=fade:duration=0.3:offset=22.421120000000002[xfade3];
+[xfade3]subtitles=runs/bf92aa76/captions.ass:fontsdir=assets/fonts[with_subs];
+[with_subs]null[with_progress]

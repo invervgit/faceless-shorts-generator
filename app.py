@@ -45,10 +45,10 @@ SURPRISE_TOPICS = [
 
 async def _handle_generate(*args, progress=gr.Progress()):
     keys = [
-        "topic", "tone", "duration", 
+        "topic", "tone", "duration", "target_scenes",
         "voice_engine", "voice_lang", "voice_id", "voice_rate", "voice_pitch",
         "image_sources", "subject_hint", "motion_style", "transition", "allow_fallback",
-        "caption_style", "font_family", "font_size", "primary_color", "highlight_color", "outline_color", "vertical_pos", "uppercase",
+        "disable_captions", "caption_style", "font_family", "font_size", "primary_color", "highlight_color", "outline_color", "vertical_pos", "uppercase",
         "intro_path", "outro_path", "logo_path", "logo_pos", "logo_margin", "logo_scale", "logo_opacity",
         "music_path", "music_gain",
         "preset_slider", "crf", "fps", "resolution"
@@ -63,10 +63,10 @@ async def _handle_generate(*args, progress=gr.Progress()):
     save_session(save_state)
     
     job = JobSpec(
-        topic=state["topic"], tone=state["tone"], duration=int(state["duration"]),
+        topic=state["topic"], tone=state["tone"], duration=int(state["duration"]), target_scenes=int(state["target_scenes"]),
         voice_engine=state["voice_engine"], voice_lang=state["voice_lang"], voice_id=state["voice_id"], voice_rate=state["voice_rate"], voice_pitch=state["voice_pitch"],
         image_sources=state["image_sources"], subject_hint=state["subject_hint"], motion_style=state["motion_style"], transition=state["transition"], allow_fallback=state["allow_fallback"],
-        style=state["caption_style"], font_family=state["font_family"], font_size=int(state["font_size"]), primary_color=state["primary_color"], highlight_color=state["highlight_color"], outline_color=state["outline_color"], vertical_position=int(state["vertical_pos"]), uppercase=state["uppercase"],
+        disable_captions=state["disable_captions"], style=state["caption_style"], font_family=state["font_family"], font_size=int(state["font_size"]), primary_color=state["primary_color"], highlight_color=state["highlight_color"], outline_color=state["outline_color"], vertical_position=int(state["vertical_pos"]), uppercase=state["uppercase"],
         intro_path=save_state.get("intro_path"), outro_path=save_state.get("outro_path"), logo_path=save_state.get("logo_path"), logo_position=state["logo_pos"], logo_margin=int(state["logo_margin"]), logo_scale=float(state["logo_scale"]), logo_opacity=float(state["logo_opacity"]),
         music_path=save_state.get("music_path"), music_gain_db=int(state["music_gain"]),
         render_preset=preset, render_crf=int(state["crf"]), render_fps=int(state["fps"]), render_resolution=state["resolution"],
@@ -124,28 +124,34 @@ with gr.Blocks(theme=gr.themes.Monochrome(text_size="sm")) as app:
             with gr.Row():
                 with gr.Column(scale=1):
                     with gr.Row():
-                        topic = gr.Textbox(label="Topic", value=s.get("topic", ""), scale=4)
+                        topic = gr.Textbox(label="Topic or Detailed Prompt / Script", value=s.get("topic", ""), lines=4, scale=4, placeholder="Enter a topic or paste a complete script for the AI to follow...")
                         btn_surprise = gr.Button("Surprise Me", scale=1)
                         btn_surprise.click(lambda: random.choice(SURPRISE_TOPICS), outputs=topic)
                         
                     tone = gr.Dropdown(["documentary", "motivational", "listicle", "storytime", "explainer"], label="Tone", value=s.get("tone", "documentary"))
                     duration = gr.Slider(15, 90, value=s.get("duration", 30), step=1, label="Duration (sec)")
+                    target_scenes = gr.Slider(2, 10, value=s.get("target_scenes", 5), step=1, label="Number of Photos/Scenes")
 
                     with gr.Accordion("Voice", open=False):
                         v_engine = gr.Radio(["edge-tts", "kokoro", "piper"], label="Engine", value=s.get("voice_engine", "edge-tts"))
                         v_lang = gr.Dropdown(["en", "es", "fr", "de"], label="Language", value=s.get("voice_lang", "en"))
-                        v_id = gr.Dropdown(["en-US-ChristopherNeural", "en-US-JennyNeural", "en-GB-SoniaNeural"], label="Voice ID", value=s.get("voice_id", "en-US-ChristopherNeural"))
+                        v_id = gr.Dropdown([
+                            "en-IN-NeerjaExpressiveNeural", "en-IN-NeerjaNeural", "en-IN-PrabhatNeural",
+                            "hi-IN-MadhurNeural", "hi-IN-SwaraNeural",
+                            "en-US-ChristopherNeural", "en-US-JennyNeural", "en-GB-SoniaNeural"
+                        ], label="Voice ID", value=s.get("voice_id", "hi-IN-MadhurNeural"))
                         v_rate = gr.Textbox(label="Rate", value=s.get("voice_rate", "+0%"))
                         v_pitch = gr.Textbox(label="Pitch", value=s.get("voice_pitch", "+0Hz"))
 
                     with gr.Accordion("Visuals", open=False):
-                        i_sources = gr.CheckboxGroup(["wikimedia", "openverse", "pexels", "pixabay", "unsplash"], label="Sources", value=s.get("image_sources", ["wikimedia", "openverse", "pexels", "pixabay", "unsplash"]))
+                        i_sources = gr.CheckboxGroup(["duckduckgo", "wikimedia", "openverse", "pexels", "pixabay", "unsplash"], label="Sources", value=s.get("image_sources", ["duckduckgo", "wikimedia", "openverse", "pexels", "pixabay", "unsplash"]))
                         s_hint = gr.Radio(["auto", "person", "place", "concept"], label="Subject Hint", value=s.get("subject_hint", "auto"))
                         m_style = gr.Dropdown(["auto", "static", "dynamic"], label="Motion Style", value=s.get("motion_style", "auto"))
                         trans = gr.Dropdown(["fade", "slideleft", "dissolve", "wipeup"], label="Transition", value=s.get("transition", "fade"))
                         fallback = gr.Checkbox(label="Allow AI-generated fallback", value=s.get("allow_fallback", True))
 
                     with gr.Accordion("Captions", open=False):
+                        c_disable = gr.Checkbox(label="Disable Captions (Do not render text)", value=s.get("disable_captions", False))
                         c_style = gr.Dropdown(["karaoke", "word", "phrase", "typewriter"], label="Style", value=s.get("caption_style", "karaoke"))
                         c_font = gr.Textbox(label="Font Family", value=s.get("font_family", "Montserrat ExtraBold"))
                         c_size = gr.Slider(10, 80, value=s.get("font_size", 24), step=1, label="Font Size")
@@ -186,9 +192,9 @@ with gr.Blocks(theme=gr.themes.Monochrome(text_size="sm")) as app:
                         out_timing = gr.JSON(label="Timings")
 
             inputs = [
-                topic, tone, duration, v_engine, v_lang, v_id, v_rate, v_pitch,
+                topic, tone, duration, target_scenes, v_engine, v_lang, v_id, v_rate, v_pitch,
                 i_sources, s_hint, m_style, trans, fallback,
-                c_style, c_font, c_size, c_pcol, c_hcol, c_ocol, c_pos, c_upper,
+                c_disable, c_style, c_font, c_size, c_pcol, c_hcol, c_ocol, c_pos, c_upper,
                 b_intro, b_outro, b_logo, b_lpos, b_lmargin, b_lscale, b_lopac,
                 b_music, b_mgain,
                 q_preset, q_crf, q_fps, q_res
