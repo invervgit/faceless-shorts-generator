@@ -23,6 +23,7 @@ dependencies = [
     "typer>=0.9.0",
     "rich>=13.0.0",
     "structlog>=24.1.0",
+    "ddgs>=9.16.0",
 ]
 
 [project.optional-dependencies]

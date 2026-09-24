@@ -1,6 +1,7 @@
 import logging
+import asyncio
 from typing import List
-from duckduckgo_search import AsyncDDGS
+from ddgs import DDGS
 from shorts.sources.base import ImageSource, ImageResult
 
 logger = logging.getLogger(__name__)
@@ -11,23 +12,21 @@ class DuckDuckGoSource(ImageSource):
     supports_people = True
     license_type = "Fair Use / Web"
 
+    def _sync_search(self, query: str, count: int) -> List[dict]:
+        results = []
+        with DDGS() as ddgs:
+            for r in ddgs.images(query, max_results=count * 2):
+                results.append(r)
+        return results
+
     async def search(self, query: str, count: int, orientation: str, min_width: int) -> List[ImageResult]:
         results = []
         try:
-            # Orientation maps for DDG aren't perfectly strict, but we can search for large images
-            # or try to enforce portrait by looking at width/height if returned
-            async with AsyncDDGS() as ddgs:
-                ddg_results = await ddgs.images(
-                    query,
-                    region="wt-wt",
-                    safesearch="moderate",
-                    size="Large",
-                    max_results=count * 2
-                )
+            ddg_results = await asyncio.to_thread(self._sync_search, query, count)
                 
             for res in ddg_results:
-                w = res.get("width", 0)
-                h = res.get("height", 0)
+                w = int(res.get("width", 0) or 0)
+                h = int(res.get("height", 0) or 0)
                 url = res.get("image")
                 thumb = res.get("thumbnail")
                 
