@@ -10,6 +10,9 @@ from pathlib import Path
 import gradio as gr
 from dotenv import load_dotenv, set_key
 
+# Load environment variables from .env into os.environ
+load_dotenv(override=True)
+
 from shorts.captions import ASSGenerator
 from shorts.models import WordTiming
 from shorts.pipeline import JobSpec, generate
@@ -149,7 +152,7 @@ with gr.Blocks(theme=gr.themes.Monochrome(text_size="sm")) as app:
                         c_pcol = gr.Textbox(label="Primary Color (ASS)", value=s.get("primary_color", "&H00FFFFFF"))
                         c_hcol = gr.Textbox(label="Highlight Color (ASS)", value=s.get("highlight_color", "&H0000FFFF"))
                         c_ocol = gr.Textbox(label="Outline Color (ASS)", value=s.get("outline_color", "&H00000000"))
-                        c_pos = gr.Slider(18, 78, value=s.get("vertical_pos", 80), step=1, label="Vertical Position (%)")
+                        c_pos = gr.Slider(18, 78, value=s.get("vertical_pos", 78), step=1, label="Vertical Position (%)")
                         c_upper = gr.Checkbox(label="Uppercase", value=s.get("uppercase", True))
                         btn_preview = gr.Button("Preview Caption")
                         c_img = gr.Image(label="Live Preview", type="filepath")
