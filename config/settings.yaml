@@ -3,21 +3,21 @@ providers:
   - name: "cerebras"
     base_url: "https://api.cerebras.ai/v1/chat/completions"
     api_key_env: "CEREBRAS_API_KEY"
-    model: "llama-3.3-70b"
+    model: "qwen-3.8-27b"
     is_openai_compatible: true
-    supports_json_mode: true
+    supports_json_mode: false
   - name: "openrouter"
     base_url: "https://openrouter.ai/api/v1/chat/completions"
     api_key_env: "OPENROUTER_API_KEY"
-    model: "meta-llama/llama-3-8b-instruct:free"
+    model: "qwen/qwen3.8-27b:free"
     is_openai_compatible: true
-    supports_json_mode: true
+    supports_json_mode: false
   - name: "groq"
     base_url: "https://api.groq.com/openai/v1/chat/completions"
     api_key_env: "GROQ_API_KEY"
-    model: "llama-3.3-70b-versatile"
+    model: "qwen/qwen3.8-27b"
     is_openai_compatible: true
-    supports_json_mode: true
+    supports_json_mode: false
   - name: "gemini"
     base_url: "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     api_key_env: "GEMINI_API_KEY"
