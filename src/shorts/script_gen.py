@@ -60,6 +60,7 @@ async def call_openai_compatible(
     if not api_key:
         raise ValueError(f"Missing API key: {provider.api_key_env}")
 
+    api_key = api_key.strip()
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
@@ -100,6 +101,7 @@ async def call_gemini(
     if not api_key:
         raise ValueError(f"Missing API key: {provider.api_key_env}")
 
+    api_key = api_key.strip()
     # base_url has {model} placeholder
     url = provider.base_url.format(model=provider.model)
     url = f"{url}?key={api_key}"
