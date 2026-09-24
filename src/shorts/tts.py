@@ -106,6 +106,21 @@ async def _generate_edge_tts(
                 )
 
     duration_s = _get_audio_duration(output_path)
+    timings_source = "tts"
+    
+    if not words:
+        try:
+            words = await _align_whisper(str(output_path))
+            timings_source = "whisper"
+        except Exception as e:
+            logger.warning(f"Whisper alignment failed: {e}. Falling back to uniform word timings.")
+            tokens = text.split()
+            if tokens:
+                time_per_word = duration_s / len(tokens)
+                for i, token in enumerate(tokens):
+                    start = i * time_per_word
+                    words.append(WordTiming(word=token, start_time=start, end_time=start + time_per_word))
+            timings_source = "uniform"
     
     return VoiceTrack(
         audio_path=str(output_path),
@@ -113,7 +128,7 @@ async def _generate_edge_tts(
         words=words,
         engine_used="edge-tts",
         voice_id=voice_id,
-        timings_source="tts"
+        timings_source=timings_source
     )
 
 
@@ -154,9 +169,21 @@ async def _generate_gtts(text: str, voice_id: str, output_path: Path) -> VoiceTr
         
     await asyncio.to_thread(_run)
     duration_s = _get_audio_duration(output_path)
+    timings_source = "whisper"
     
-    logger.info("Aligning gTTS audio with faster-whisper...")
-    words = await _align_whisper(str(output_path))
+    logger.info("Aligning gTTS audio...")
+    try:
+        words = await _align_whisper(str(output_path))
+    except Exception as e:
+        logger.warning(f"Whisper alignment failed: {e}. Falling back to uniform word timings.")
+        words = []
+        tokens = text.split()
+        if tokens:
+            time_per_word = duration_s / len(tokens)
+            for i, token in enumerate(tokens):
+                start = i * time_per_word
+                words.append(WordTiming(word=token, start_time=start, end_time=start + time_per_word))
+        timings_source = "uniform"
     
     return VoiceTrack(
         audio_path=str(output_path),
@@ -164,7 +191,7 @@ async def _generate_gtts(text: str, voice_id: str, output_path: Path) -> VoiceTr
         words=words,
         engine_used="gtts",
         voice_id=voice_id,
-        timings_source="whisper"
+        timings_source=timings_source
     )
 
 
