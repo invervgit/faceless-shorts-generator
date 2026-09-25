@@ -144,7 +144,7 @@ with gr.Blocks(theme=gr.themes.Monochrome(text_size="sm")) as app:
                         v_pitch = gr.Textbox(label="Pitch", value=s.get("voice_pitch", "+0Hz"))
 
                     with gr.Accordion("Visuals", open=False):
-                        i_sources = gr.CheckboxGroup(["duckduckgo", "wikimedia", "openverse", "pexels", "pixabay", "unsplash"], label="Sources", value=s.get("image_sources", ["duckduckgo", "wikimedia", "openverse", "pexels", "pixabay", "unsplash"]))
+                        i_sources = gr.CheckboxGroup(["duckduckgo", "wikimedia", "openverse", "pexels", "pixabay", "unsplash", "pollinations"], label="Sources", value=s.get("image_sources", ["duckduckgo", "wikimedia", "openverse", "pexels", "pixabay", "unsplash", "pollinations"]))
                         s_hint = gr.Radio(["auto", "person", "place", "concept"], label="Subject Hint", value=s.get("subject_hint", "auto"))
                         m_style = gr.Dropdown(["auto", "static", "dynamic"], label="Motion Style", value=s.get("motion_style", "auto"))
                         trans = gr.Dropdown(["fade", "slideleft", "dissolve", "wipeup"], label="Transition", value=s.get("transition", "fade"))

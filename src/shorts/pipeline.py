@@ -144,7 +144,8 @@ async def generate(job: JobSpec) -> AsyncGenerator[ProgressEvent, None]:
                     subject_type=scene.subject_type,
                     count=1,
                     orientation="portrait",
-                    min_width=720
+                    min_width=720,
+                    allowed_sources=job.image_sources
                 )
                 return scene_idx, imgs[0] if imgs else None
 

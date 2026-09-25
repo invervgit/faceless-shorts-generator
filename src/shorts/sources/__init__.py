@@ -95,7 +95,7 @@ class SourceRegistry:
             duckduckgo_source,
             wikimedia_source,
             openverse_source,
-            # broadened wikimedia logic can be handled at the source level or injected as a lambda
+            pollinations_source,
         ]
         
         self.generic_cascade = [
@@ -142,10 +142,13 @@ class SourceRegistry:
         subject_type: str, 
         count: int = 1, 
         orientation: str = "portrait", 
-        min_width: int = 720
+        min_width: int = 720,
+        allowed_sources: Optional[List[str]] = None
     ) -> List[ImageResult]:
         
         cascade = self.person_cascade if subject_type == "person" else self.generic_cascade
+        if allowed_sources is not None:
+            cascade = [src for src in cascade if src.name in allowed_sources]
         
         collected: List[ImageResult] = []
         seen_hashes: Set[str] = set()
